@@ -1,0 +1,7 @@
+﻿Đang thêm trang chủ rồi(còn lỗi)
+Đã thiết lập kết nối với CSDl rồi nhưng chưa có database
+Giờ:
+ - Cần làm trang thêm bài viết trước đã (Tối nay)
+ - Tải về và sửa lại phần giao diện của trang chủ và trang thêm bài viết(Mai)
+ - Tạo chức năng thêm bài viết (Hạn: T5)
+ - Hiện bài viết (Hạn: T5)
