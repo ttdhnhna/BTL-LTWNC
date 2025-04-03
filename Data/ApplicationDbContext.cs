@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BTL_LTWNC.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace BTL_LTWNC.Data
 {
@@ -9,6 +10,8 @@ namespace BTL_LTWNC.Data
         {
         }
 
+        public DbSet<VehiclePostViewModel> tbl_Vehicle { get; set; }
 
+        public DbSet<PostViewModel> tbl_Post { get; set; }
     }
 }

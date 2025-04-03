@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XYG/cFksd3ppFw0hJ5BIBkKe5xqdUY+zeZ9uL4PKCAw=",
+  "Hash": "Ujp5Y//Gyi1EFPhVResxLvym2g/g2DXvhTwcBDe5noQ=",
   "Source": "BTL-LTWNC",
   "BasePath": "_content/BTL-LTWNC",
   "Mode": "Default",
@@ -101,6 +101,48 @@
       "OriginalItemSpec": "wwwroot\\css\\style1.css"
     },
     {
+      "Identity": "C:\\Code\\BTL-LTWNC\\wwwroot\\css\\style2.css",
+      "SourceId": "BTL-LTWNC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Code\\BTL-LTWNC\\wwwroot\\",
+      "BasePath": "_content/BTL-LTWNC",
+      "RelativePath": "css/style2#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vjnnwdkwxi",
+      "Integrity": "+4qt2TWKm8pyZsP6qpG0NJlQxxdm2kynNRz7sR/SNv4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\style2.css"
+    },
+    {
+      "Identity": "C:\\Code\\BTL-LTWNC\\wwwroot\\css\\style3.css",
+      "SourceId": "BTL-LTWNC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Code\\BTL-LTWNC\\wwwroot\\",
+      "BasePath": "_content/BTL-LTWNC",
+      "RelativePath": "css/style3#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vgqbwqy9hh",
+      "Integrity": "QX15gf6MXTjW/5t6M5112q9NjYQmKlpjGHs0hGpWMZ8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\style3.css"
+    },
+    {
       "Identity": "C:\\Code\\BTL-LTWNC\\wwwroot\\favicon.ico",
       "SourceId": "BTL-LTWNC",
       "SourceType": "Discovered",
@@ -120,6 +162,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Code\\BTL-LTWNC\\wwwroot\\images\\backgroud_LG.jpg",
+      "SourceId": "BTL-LTWNC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Code\\BTL-LTWNC\\wwwroot\\",
+      "BasePath": "_content/BTL-LTWNC",
+      "RelativePath": "images/backgroud_LG#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "81qkb06m37",
+      "Integrity": "zIuLHczyjXAc4UFnt0mIK/0u6JeR62ERga+0qmQnw6o=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\backgroud_LG.jpg"
+    },
+    {
+      "Identity": "C:\\Code\\BTL-LTWNC\\wwwroot\\images\\Logo.png",
+      "SourceId": "BTL-LTWNC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Code\\BTL-LTWNC\\wwwroot\\",
+      "BasePath": "_content/BTL-LTWNC",
+      "RelativePath": "images/Logo#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jqan9c3fei",
+      "Integrity": "G99/yHqxlDkMsZWNISbsRNhvMJN37OCGmOiWFAIxI84=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Logo.png"
     },
     {
       "Identity": "C:\\Code\\BTL-LTWNC\\wwwroot\\images\\v13_251.png",
@@ -204,6 +288,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\v13_299.png"
+    },
+    {
+      "Identity": "C:\\Code\\BTL-LTWNC\\wwwroot\\images\\VeloGo.png",
+      "SourceId": "BTL-LTWNC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Code\\BTL-LTWNC\\wwwroot\\",
+      "BasePath": "_content/BTL-LTWNC",
+      "RelativePath": "images/VeloGo#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "5tu1uqf5jd",
+      "Integrity": "x/fI/nIkQmHZBGF91lQBy2sbuzdRYe4l37K8ppCJRz8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\VeloGo.png"
     },
     {
       "Identity": "C:\\Code\\BTL-LTWNC\\wwwroot\\js\\site.js",
@@ -1422,6 +1527,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Code\\BTL-LTWNC\\wwwroot\\uploads\\4e9f1cdd-bee8-4c22-a87c-fdae0a801599_C300-AMG-CBU-2022-10.png",
+      "SourceId": "BTL-LTWNC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Code\\BTL-LTWNC\\wwwroot\\",
+      "BasePath": "_content/BTL-LTWNC",
+      "RelativePath": "uploads/4e9f1cdd-bee8-4c22-a87c-fdae0a801599_C300-AMG-CBU-2022-10#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tgtw4p2ti2",
+      "Integrity": "LUWdCjRJm5QiN0CZ3YDr4r+n39O1iig3Q6f0nskud14=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\4e9f1cdd-bee8-4c22-a87c-fdae0a801599_C300-AMG-CBU-2022-10.png"
     }
   ],
   "Endpoints": [
@@ -1448,7 +1574,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 31 Mar 2025 17:58:57 GMT"
+          "Value": "Thu, 03 Apr 2025 04:22:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1485,7 +1611,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 31 Mar 2025 17:58:57 GMT"
+          "Value": "Thu, 03 Apr 2025 04:22:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1530,7 +1656,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 31 Mar 2025 17:58:57 GMT"
+          "Value": "Thu, 03 Apr 2025 04:22:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1575,7 +1701,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 31 Mar 2025 17:58:57 GMT"
+          "Value": "Thu, 03 Apr 2025 04:22:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1754,6 +1880,170 @@
       ]
     },
     {
+      "Route": "css/style2.css",
+      "AssetFile": "C:\\Code\\BTL-LTWNC\\wwwroot\\css\\style2.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2580"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+4qt2TWKm8pyZsP6qpG0NJlQxxdm2kynNRz7sR/SNv4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 01 Apr 2025 17:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+4qt2TWKm8pyZsP6qpG0NJlQxxdm2kynNRz7sR/SNv4="
+        }
+      ]
+    },
+    {
+      "Route": "css/style2.vjnnwdkwxi.css",
+      "AssetFile": "C:\\Code\\BTL-LTWNC\\wwwroot\\css\\style2.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2580"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+4qt2TWKm8pyZsP6qpG0NJlQxxdm2kynNRz7sR/SNv4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 01 Apr 2025 17:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vjnnwdkwxi"
+        },
+        {
+          "Name": "label",
+          "Value": "css/style2.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+4qt2TWKm8pyZsP6qpG0NJlQxxdm2kynNRz7sR/SNv4="
+        }
+      ]
+    },
+    {
+      "Route": "css/style3.css",
+      "AssetFile": "C:\\Code\\BTL-LTWNC\\wwwroot\\css\\style3.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2275"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QX15gf6MXTjW/5t6M5112q9NjYQmKlpjGHs0hGpWMZ8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 02 Apr 2025 10:15:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-QX15gf6MXTjW/5t6M5112q9NjYQmKlpjGHs0hGpWMZ8="
+        }
+      ]
+    },
+    {
+      "Route": "css/style3.vgqbwqy9hh.css",
+      "AssetFile": "C:\\Code\\BTL-LTWNC\\wwwroot\\css\\style3.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2275"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QX15gf6MXTjW/5t6M5112q9NjYQmKlpjGHs0hGpWMZ8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 02 Apr 2025 10:15:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vgqbwqy9hh"
+        },
+        {
+          "Name": "label",
+          "Value": "css/style3.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-QX15gf6MXTjW/5t6M5112q9NjYQmKlpjGHs0hGpWMZ8="
+        }
+      ]
+    },
+    {
       "Route": "favicon.61n19gt1b8.ico",
       "AssetFile": "C:\\Code\\BTL-LTWNC\\wwwroot\\favicon.ico",
       "Selectors": [],
@@ -1832,6 +2122,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+        }
+      ]
+    },
+    {
+      "Route": "images/backgroud_LG.81qkb06m37.jpg",
+      "AssetFile": "C:\\Code\\BTL-LTWNC\\wwwroot\\images\\backgroud_LG.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "48408"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"zIuLHczyjXAc4UFnt0mIK/0u6JeR62ERga+0qmQnw6o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 01 Apr 2025 09:21:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "81qkb06m37"
+        },
+        {
+          "Name": "label",
+          "Value": "images/backgroud_LG.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-zIuLHczyjXAc4UFnt0mIK/0u6JeR62ERga+0qmQnw6o="
+        }
+      ]
+    },
+    {
+      "Route": "images/backgroud_LG.jpg",
+      "AssetFile": "C:\\Code\\BTL-LTWNC\\wwwroot\\images\\backgroud_LG.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "48408"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"zIuLHczyjXAc4UFnt0mIK/0u6JeR62ERga+0qmQnw6o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 01 Apr 2025 09:21:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-zIuLHczyjXAc4UFnt0mIK/0u6JeR62ERga+0qmQnw6o="
+        }
+      ]
+    },
+    {
+      "Route": "images/Logo.jqan9c3fei.png",
+      "AssetFile": "C:\\Code\\BTL-LTWNC\\wwwroot\\images\\Logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "74713"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"G99/yHqxlDkMsZWNISbsRNhvMJN37OCGmOiWFAIxI84=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 01 Apr 2025 09:21:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jqan9c3fei"
+        },
+        {
+          "Name": "label",
+          "Value": "images/Logo.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-G99/yHqxlDkMsZWNISbsRNhvMJN37OCGmOiWFAIxI84="
+        }
+      ]
+    },
+    {
+      "Route": "images/Logo.png",
+      "AssetFile": "C:\\Code\\BTL-LTWNC\\wwwroot\\images\\Logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "74713"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"G99/yHqxlDkMsZWNISbsRNhvMJN37OCGmOiWFAIxI84=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 01 Apr 2025 09:21:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-G99/yHqxlDkMsZWNISbsRNhvMJN37OCGmOiWFAIxI84="
         }
       ]
     },
@@ -2160,6 +2614,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-pcG2APii6Oufj5eCrzapPzFUavzRTciXH4Yf2yIz4UE="
+        }
+      ]
+    },
+    {
+      "Route": "images/VeloGo.5tu1uqf5jd.png",
+      "AssetFile": "C:\\Code\\BTL-LTWNC\\wwwroot\\images\\VeloGo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5432698"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"x/fI/nIkQmHZBGF91lQBy2sbuzdRYe4l37K8ppCJRz8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 01 Apr 2025 09:21:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5tu1uqf5jd"
+        },
+        {
+          "Name": "label",
+          "Value": "images/VeloGo.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-x/fI/nIkQmHZBGF91lQBy2sbuzdRYe4l37K8ppCJRz8="
+        }
+      ]
+    },
+    {
+      "Route": "images/VeloGo.png",
+      "AssetFile": "C:\\Code\\BTL-LTWNC\\wwwroot\\images\\VeloGo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5432698"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"x/fI/nIkQmHZBGF91lQBy2sbuzdRYe4l37K8ppCJRz8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 01 Apr 2025 09:21:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-x/fI/nIkQmHZBGF91lQBy2sbuzdRYe4l37K8ppCJRz8="
         }
       ]
     },
@@ -6916,6 +7452,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-16aFlqtpsG9RyieKZUUUjkJpqTgcJtWXwT312I4Iz1s="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/4e9f1cdd-bee8-4c22-a87c-fdae0a801599_C300-AMG-CBU-2022-10.png",
+      "AssetFile": "C:\\Code\\BTL-LTWNC\\wwwroot\\uploads\\4e9f1cdd-bee8-4c22-a87c-fdae0a801599_C300-AMG-CBU-2022-10.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "50072"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LUWdCjRJm5QiN0CZ3YDr4r+n39O1iig3Q6f0nskud14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 03 Apr 2025 17:59:09 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-LUWdCjRJm5QiN0CZ3YDr4r+n39O1iig3Q6f0nskud14="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/4e9f1cdd-bee8-4c22-a87c-fdae0a801599_C300-AMG-CBU-2022-10.tgtw4p2ti2.png",
+      "AssetFile": "C:\\Code\\BTL-LTWNC\\wwwroot\\uploads\\4e9f1cdd-bee8-4c22-a87c-fdae0a801599_C300-AMG-CBU-2022-10.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "50072"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LUWdCjRJm5QiN0CZ3YDr4r+n39O1iig3Q6f0nskud14=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 03 Apr 2025 17:59:09 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tgtw4p2ti2"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/4e9f1cdd-bee8-4c22-a87c-fdae0a801599_C300-AMG-CBU-2022-10.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-LUWdCjRJm5QiN0CZ3YDr4r+n39O1iig3Q6f0nskud14="
         }
       ]
     }

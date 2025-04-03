@@ -1,10 +1,15 @@
 wwwroot\css\site.css
 wwwroot\css\style1.css
+wwwroot\css\style2.css
+wwwroot\css\style3.css
 wwwroot\favicon.ico
+wwwroot\images\backgroud_LG.jpg
+wwwroot\images\Logo.png
 wwwroot\images\v13_251.png
 wwwroot\images\v13_270.png
 wwwroot\images\v13_296.png
 wwwroot\images\v13_299.png
+wwwroot\images\VeloGo.png
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
@@ -63,3 +68,4 @@ wwwroot\lib\jquery-validation\LICENSE.md
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
 wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+wwwroot\uploads\4e9f1cdd-bee8-4c22-a87c-fdae0a801599_C300-AMG-CBU-2022-10.png

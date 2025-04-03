@@ -1,0 +1,114 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Bài đăng";
+}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/style2.css" asp-append-version="true">
+</head>
+<body>
+    <header>
+        <a href="/">
+            <img src="/images/Logo.png" alt="VeloGo Logo" class="logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#">Thông báo</a></li>
+                <li><a href="#">Lịch sử</a></li>
+                <li class="user-dropdown">
+                    <a href="#">User Name ▾</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="banner">
+    </div>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Bài đăng</a></li>
+            <li><a href="#">Giới thiệu</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Bộ lọc -->
+        <section class="filter-container">
+            <h3 class="filter-title">Bộ lọc</h3>
+            <div class="filter">
+                <div class="filter-group">
+                    <label><input type="radio" name="vehicle" checked> Ô tô</label>
+                    <label><input type="radio" name="vehicle"> Xe máy</label>
+                </div>
+                <select>
+                    <option>Loại xe</option>
+                </select>
+                <select>
+                    <option>Hãng xe</option>
+                </select>
+                <input type="text" placeholder="Giá">
+                <select>
+                    <option>Tỉnh/Thành phố</option>
+                </select>
+                <select>
+                    <option>Quận/Huyện</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Danh sách bài đăng -->
+        <section class="listing">
+            <div class="listing-header">
+                <h2>Danh sách bài đăng</h2>
+                <a asp-controller="Posts" asp-action="AddPost" class="create-post-btn">Tạo bài đăng</a>
+            </div>
+            <article class="listing-item">
+                <img src="car.jpg" alt="Kia Morning">
+                <div class="listing-content">
+                    <h3>KIA MORNING 1.25 SI MT</h3>
+                    <p>⭐ ⭐ ⭐ ⭐ ⭐ | 550.000đ/ngày</p>
+                </div>
+                <button>Chi tiết</button>
+            </article>
+            <article class="listing-item">
+                <img src="car.jpg" alt="Kia Morning">
+                <div class="listing-content">
+                    <h3>KIA MORNING 1.25 SI MT</h3>
+                    <p>⭐ ⭐ ⭐ ⭐ ⭐ | 550.000đ/ngày</p>
+                </div>
+                <button>Chi tiết</button>
+            </article>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact">
+                <p>Công ty VeloGo</p>
+                <p>Giấy ĐKKD số 0108383104</p>
+                <p>Cơ sở KH&ĐT Hà Nội</p>
+            </div>
+            <div class="policy">
+                <p>Chính sách bảo mật thông tin</p>
+                <p>Quy chế hoạt động</p>
+                <p>Quy trình giải quyết khiếu nại</p>
+                <p>Chính sách hủy bỏ</p>
+            </div>
+            <div class="support">
+                <p>Hướng dẫn thuê xe</p>
+                <p>Hợp đồng thuê xe tự động</p>
+                <p>Cẩm nang cho thuê xe tự lái</p>
+                <p>Câu hỏi thường gặp</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
