@@ -285,10 +285,6 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "C:\\Code\\BTL-LTWNC\\wwwroot\\uploads\\4e9f1cdd-bee8-4c22-a87c-fdae0a801599_C300-AMG-CBU-2022-10.png",
-      "PackagePath": "staticwebassets\\uploads\\4e9f1cdd-bee8-4c22-a87c-fdae0a801599_C300-AMG-CBU-2022-10.png"
-    },
-    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.BTL-LTWNC.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },

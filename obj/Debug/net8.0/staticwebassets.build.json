@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Ujp5Y//Gyi1EFPhVResxLvym2g/g2DXvhTwcBDe5noQ=",
+  "Hash": "ttCzR6ZR24khc0QTcTJ12cBGQAC3OwX8/I203uEol1U=",
   "Source": "BTL-LTWNC",
   "BasePath": "_content/BTL-LTWNC",
   "Mode": "Default",
@@ -1527,27 +1527,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
-    },
-    {
-      "Identity": "C:\\Code\\BTL-LTWNC\\wwwroot\\uploads\\4e9f1cdd-bee8-4c22-a87c-fdae0a801599_C300-AMG-CBU-2022-10.png",
-      "SourceId": "BTL-LTWNC",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Code\\BTL-LTWNC\\wwwroot\\",
-      "BasePath": "_content/BTL-LTWNC",
-      "RelativePath": "uploads/4e9f1cdd-bee8-4c22-a87c-fdae0a801599_C300-AMG-CBU-2022-10#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "tgtw4p2ti2",
-      "Integrity": "LUWdCjRJm5QiN0CZ3YDr4r+n39O1iig3Q6f0nskud14=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\4e9f1cdd-bee8-4c22-a87c-fdae0a801599_C300-AMG-CBU-2022-10.png"
     }
   ],
   "Endpoints": [
@@ -7452,88 +7431,6 @@
         {
           "Name": "integrity",
           "Value": "sha256-16aFlqtpsG9RyieKZUUUjkJpqTgcJtWXwT312I4Iz1s="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/4e9f1cdd-bee8-4c22-a87c-fdae0a801599_C300-AMG-CBU-2022-10.png",
-      "AssetFile": "C:\\Code\\BTL-LTWNC\\wwwroot\\uploads\\4e9f1cdd-bee8-4c22-a87c-fdae0a801599_C300-AMG-CBU-2022-10.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "50072"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"LUWdCjRJm5QiN0CZ3YDr4r+n39O1iig3Q6f0nskud14=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 03 Apr 2025 17:59:09 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-LUWdCjRJm5QiN0CZ3YDr4r+n39O1iig3Q6f0nskud14="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/4e9f1cdd-bee8-4c22-a87c-fdae0a801599_C300-AMG-CBU-2022-10.tgtw4p2ti2.png",
-      "AssetFile": "C:\\Code\\BTL-LTWNC\\wwwroot\\uploads\\4e9f1cdd-bee8-4c22-a87c-fdae0a801599_C300-AMG-CBU-2022-10.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "50072"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"LUWdCjRJm5QiN0CZ3YDr4r+n39O1iig3Q6f0nskud14=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 03 Apr 2025 17:59:09 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "tgtw4p2ti2"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/4e9f1cdd-bee8-4c22-a87c-fdae0a801599_C300-AMG-CBU-2022-10.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-LUWdCjRJm5QiN0CZ3YDr4r+n39O1iig3Q6f0nskud14="
         }
       ]
     }

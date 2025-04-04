@@ -6,6 +6,9 @@ namespace BTL_LTWNC.Models
     public class PostViewModel
     {
         [Required]
+        public int Id { get; set; }
+
+        [Required]
         public string CarName { get; set; }
 
         [Required]

@@ -1278,23 +1278,5 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery\LICENSE.txt'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\4e9f1cdd-bee8-4c22-a87c-fdae0a801599_C300-AMG-CBU-2022-10.png'))">
-      <SourceType>Package</SourceType>
-      <SourceId>BTL-LTWNC</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/BTL-LTWNC</BasePath>
-      <RelativePath>uploads/4e9f1cdd-bee8-4c22-a87c-fdae0a801599_C300-AMG-CBU-2022-10.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>tgtw4p2ti2</Fingerprint>
-      <Integrity>LUWdCjRJm5QiN0CZ3YDr4r+n39O1iig3Q6f0nskud14=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\4e9f1cdd-bee8-4c22-a87c-fdae0a801599_C300-AMG-CBU-2022-10.png'))</OriginalItemSpec>
-    </StaticWebAsset>
   </ItemGroup>
 </Project>
