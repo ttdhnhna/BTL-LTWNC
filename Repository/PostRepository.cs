@@ -12,9 +12,10 @@ namespace BTL_LTWNC.Repository
             _context = context;
         }
 
-        public void AddPost(PostModel post)
+        public void AddPost(Post post)
         {
-            throw new NotImplementedException();
+            _context.Add(post);
+            _context.SaveChanges();
         }
     }
 }

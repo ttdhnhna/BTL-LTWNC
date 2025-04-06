@@ -1,17 +1,16 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BTL_LTWNC.Models
 {
-    public class PostViewModel
+    public class VehicleDto
     {
-        [Required]
+        public int Id { get; set; }
         public string CarName { get; set; }
 
-        [Required]
         public string CarNum { get; set; }
 
-        [Required]
         public decimal GiaThue { get; set; }
 
         public DateTime? NgayThue { get; set; }
@@ -24,8 +23,13 @@ namespace BTL_LTWNC.Models
         public string MoTa { get; set; }
         public string MTOther { get; set; }
 
+        /*[NotMapped]
+        [BindNever]
         public int UserID { get; set; }
-        public string imgURL { get; set; }
+        [NotMapped]
+        [BindNever]
+        public string imgURL { get; set; }*/
+
         [NotMapped]
         public IFormFile ImageFile { get; set; }
     }

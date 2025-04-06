@@ -4,6 +4,6 @@ namespace BTL_LTWNC.Repository
 {
     public interface IVehicleRepository
     {
-        void AddVehicle(VehiclePostViewModel vehicle);
+        void AddVehicle(Vehicle vehicle);
     }
 }

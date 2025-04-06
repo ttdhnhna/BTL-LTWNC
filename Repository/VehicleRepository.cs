@@ -12,7 +12,7 @@ namespace BTL_LTWNC.Repository
         {
             _context = context;
         }
-        public void AddVehicle(VehiclePostViewModel vehicle)
+        public void AddVehicle(Vehicle vehicle)
         {
             _context.tbl_Vehicle.Add(vehicle);
             _context.SaveChanges();

@@ -1,1 +1,2 @@
-﻿Đang lỗi phần thêm thông tin bài viết và phương tiện, cần phải sửa trước đã.
+﻿Tìm được lỗi rồi là chưa có bảng user, mai cần thêm trước 1 bảng để có thể lưu đã
+rồi sẽ chạy thử lại sau.

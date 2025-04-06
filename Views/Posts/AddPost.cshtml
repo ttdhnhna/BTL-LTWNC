@@ -1,7 +1,7 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@model PostViewModel
+@model VehicleDto
 @{
     ViewData["Title"] = "Thêm bài đăng";
 }
@@ -13,6 +13,18 @@
     <link rel="stylesheet" href="~/css/style3.css" asp-append-version="true">
 </head>
 <body>
+    @if (ViewBag.ErrorMessage != null)
+    {
+        <div style="color: red;">@ViewBag.ErrorMessage</div>
+    }
+
+    @foreach (var modelState in ViewData.ModelState.Values)
+    {
+        foreach (var error in modelState.Errors)
+        {
+            <div style="color: red;">@error.ErrorMessage</div>
+        }
+    }
     <header>
         <a href="/">
             <img src="/images/Logo.png" alt="VeloGo Logo" class="logo">
@@ -38,9 +50,9 @@
 
                     <div class="rental-time">
                         <label>Ngày cho thuê</label>
-                        <input type="date" asp-for="NgayThue" required>
+                        <input type="date" asp-for="NgayThue">
                         <label>Ngày kết thúc</label>
-                        <input type="date" asp-for="NgayTra" required>
+                        <input type="date" asp-for="NgayTra">
                     </div>
                 </div>
                 <div class="right-panel">

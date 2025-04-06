@@ -1,7 +1,13 @@
-﻿namespace BTL_LTWNC.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace BTL_LTWNC.Models
 {
-    public class VehiclePostViewModel
+    [Table("tbl_Vehicle")]
+    public class Vehicle
     {
+        [Key]
+        public int PK_iVehicleID { get; set; }
         public string sCarName { get; set; }
         public string sCarNum { get; set; }
         public decimal fGiaThue { get; set; }

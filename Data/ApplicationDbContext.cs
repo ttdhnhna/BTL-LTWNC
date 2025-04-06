@@ -5,13 +5,13 @@ namespace BTL_LTWNC.Data
 {
     public class ApplicationDbContext : DbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public ApplicationDbContext(DbContextOptions options)
             : base(options)
         {
         }
 
-        public DbSet<VehiclePostViewModel> tbl_Vehicle { get; set; }
+        public DbSet<Vehicle> tbl_Vehicle { get; set; }
 
-        public DbSet<PostViewModel> tbl_Post { get; set; }
+        public DbSet<Post> tbl_Post { get; set; }
     }
 }
