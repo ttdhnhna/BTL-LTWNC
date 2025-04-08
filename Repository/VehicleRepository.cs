@@ -17,5 +17,10 @@ namespace BTL_LTWNC.Repository
             _context.tbl_Vehicle.Add(vehicle);
             _context.SaveChanges();
         }
+
+        public void UpdateVehicle(Vehicle vehicle)
+        {
+            _context.SaveChanges();
+        }
     }
 }

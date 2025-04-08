@@ -48,6 +48,144 @@ namespace BTL_LTWNC.Controllers
             return View();
         }
 
+        [HttpGet]
+        public async Task<IActionResult> PostDetail(int id)
+        {
+            var post = await _context.tbl_Post.FirstOrDefaultAsync(p => p.Id == id);
+            if (post == null)
+            {
+                return NotFound();
+            }
+
+            var vehicle = await _context.tbl_Vehicle.FirstOrDefaultAsync(v => v.PK_iVehicleID == post.vehicleID);
+            if (vehicle == null)
+            {
+                return NotFound();
+            }
+
+            var viewModel = new PostvsVehicle
+            {
+                Post = post,
+                Vehicle = vehicle,
+            };
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeletePost(int id)
+        {
+            var post = await _context.tbl_Post.FirstOrDefaultAsync(p => p.Id == id);
+            if (post != null)
+            {
+                var vehicle = await _context.tbl_Vehicle.FirstOrDefaultAsync(v => v.PK_iVehicleID == post.vehicleID);
+                if (vehicle != null)
+                {
+                    _context.tbl_Vehicle.Remove(vehicle);
+                }
+
+                _context.tbl_Post.Remove(post);
+                await _context.SaveChangesAsync();
+            }
+
+            return RedirectToAction("Posts");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> UpdatePost(int id)
+        {
+            var post = await _context.tbl_Post.FirstOrDefaultAsync(p => p.Id == id);
+            if (post == null)
+                return NotFound();
+
+            var vehicle = await _context.tbl_Vehicle.FirstOrDefaultAsync(v => v.PK_iVehicleID == post.vehicleID);
+            if (vehicle == null)
+                return NotFound();
+
+            var model = new VehicleDto
+            {
+                Id = vehicle.PK_iVehicleID,
+                CarName = vehicle.sCarName,
+                CarNum = vehicle.sCarNum,
+                GiaThue = vehicle.fGiaThue,
+                NgayThue = vehicle.dNgayThue,
+                NgayTra = vehicle.dNgayTra,
+                SoCho = vehicle.sSoCho,
+                LoaiNL = vehicle.sLoaiNL,
+                DiaDiem = vehicle.sDiaDiem,
+                TinhNang = vehicle.sTinhNang,
+                MoTa = vehicle.sMoTa,
+                MTOther = vehicle.sMTOther,
+            };
+            ViewData["imgURL"] = vehicle.imgURL;
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> UpdatePost(VehicleDto model)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+                    {
+                        Console.WriteLine(error.ErrorMessage);
+                    }
+
+                    ViewBag.ErrorMessage = "Có lỗi xảy ra! Vui lòng kiểm tra lại thông tin.";
+                    return View("UpdatePost",model);
+                }
+
+                if (ModelState.IsValid)
+                {
+                    var vehicle = await _context.tbl_Vehicle.FirstOrDefaultAsync(v => v.PK_iVehicleID == model.Id);
+                    if (vehicle == null)
+                        return NotFound();
+
+                    
+                    // Xử lý ảnh
+                    if (model.ImageFile != null)
+                    {
+                        string uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
+                        string uniqueFileName = Guid.NewGuid().ToString() + "_" + model.ImageFile.FileName;
+                        string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                        using (var fileStream = new FileStream(filePath, FileMode.Create))
+                        {
+                            await model.ImageFile.CopyToAsync(fileStream);
+                        }
+
+                        vehicle.imgURL = uniqueFileName;                      
+                    }
+                    vehicle.sCarName = model.CarName;
+                    vehicle.sCarNum = model.CarNum;
+                    vehicle.fGiaThue = model.GiaThue;
+                    vehicle.dNgayThue = model.NgayThue;
+                    vehicle.dNgayTra = model.NgayTra;
+                    vehicle.sSoCho = model.SoCho;
+                    vehicle.sLoaiNL = model.LoaiNL;
+                    vehicle.sDiaDiem = model.DiaDiem;
+                    vehicle.sTinhNang = model.TinhNang;
+                    vehicle.sMoTa = model.MoTa;
+                    vehicle.sMTOther = model.MTOther;
+
+                    _vehicleRepository.UpdateVehicle(vehicle);
+                    await _context.SaveChangesAsync();
+
+                    Console.WriteLine("Cập nhật thành công, chuyển hướng đến Posts");
+                    return RedirectToAction("Posts", "Posts");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Lỗi: {ex.Message}");
+                ViewBag.ErrorMessage = "Không thể cập nhật bài đăng. Vui lòng thử lại!";
+            }
+            return View(model);
+        }
+
         [HttpPost]
         public async Task<IActionResult> AddPost(VehicleDto model)
         {

@@ -1,0 +1,102 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model VehicleDto
+@{
+    ViewData["Title"] = "Cập nhật bài đăng";
+}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/style3.css" asp-append-version="true">
+</head>
+<body>
+    @if (ViewBag.ErrorMessage != null)
+    {
+        <div style="color: red;">@ViewBag.ErrorMessage</div>
+    }
+
+    @foreach (var modelState in ViewData.ModelState.Values)
+    {
+        foreach (var error in modelState.Errors)
+        {
+            <div style="color: red;">@error.ErrorMessage</div>
+        }
+    }
+    <header>
+        <a href="/">
+            <img src="/images/Logo.png" alt="VeloGo Logo" class="logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#">Thông báo</a></li>
+                <li><a href="#">Lịch sử</a></li>
+                <li class="user-dropdown">
+                    <a href="#">User Name ▾</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>CHỈNH SỬA BÀI ĐĂNG</h1>
+        <div class="container">
+            <form asp-action="UpdatePost" method="post" enctype="multipart/form-data">
+                <input type="hidden" asp-for="Id" />
+                <div class="left-panel">
+                    <img src="~/uploads/@ViewData["imgURL"]" width="200" />
+                    <label for="file-upload">Tải lên ảnh:</label>
+                    <input type="file" id="file-upload" asp-for="ImageFile" name="ImageFile" accept="image/*">
+
+                    <div class="rental-time">
+                        <label>Ngày cho thuê</label>
+                        <input type="date" asp-for="NgayThue">
+                        <label>Ngày kết thúc</label>
+                        <input type="date" asp-for="NgayTra">
+                    </div>
+                </div>
+                <div class="right-panel">
+                    <input type="text" placeholder="Tên xe" asp-for="CarName">
+                    <input type="text" placeholder="Biển số" asp-for="CarNum">
+                    <input type="number" placeholder="Giá thuê" asp-for="GiaThue">
+                    <input type="number" placeholder="Số ghế" asp-for="SoCho">
+                    <input type="text" placeholder="Loại nhiên liệu" asp-for="LoaiNL">
+                    <input type="text" placeholder="Địa điểm" asp-for="DiaDiem">
+                    <input type="text" placeholder="Tính năng" asp-for="TinhNang">
+                    <textarea placeholder="Thủ tục cần thiết" asp-for="MoTa"></textarea>
+                    <textarea placeholder="Yêu cầu khác" asp-for="MTOther"></textarea>
+                    <div class="buttons">
+                        <button type="submit" class="save">Lưu</button>
+                        <a asp-controller="Posts" asp-action="Posts" class="cancel">Quay lại</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact">
+                <p>Công ty VeloGo</p>
+                <p>Giấy ĐKKD số 0108383104</p>
+                <p>Cơ sở KH&ĐT Hà Nội</p>
+            </div>
+            <div class="policy">
+                <p>Chính sách bảo mật thông tin</p>
+                <p>Quy chế hoạt động</p>
+                <p>Quy trình giải quyết khiếu nại</p>
+                <p>Chính sách hủy bỏ</p>
+            </div>
+            <div class="support">
+                <p>Hướng dẫn thuê xe</p>
+                <p>Hợp đồng thuê xe tự động</p>
+                <p>Cẩm nang cho thuê xe tự lái</p>
+                <p>Câu hỏi thường gặp</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

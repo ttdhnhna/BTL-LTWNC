@@ -29,6 +29,11 @@ nav ul {
         text-decoration: none;
     }
 
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
 .banner {
     background: url("../images/VeloGo.png") no-repeat center center;
     background-size: cover;
@@ -128,8 +133,26 @@ nav ul {
     background: #fff;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
+/* Chi tiết bài đăng */
+.card-custom {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #fff;
+}
 
+.feature-list, .procedure-list {
+    padding-left: 1.2rem;
+}
 
+    .feature-list li, .procedure-list li {
+        margin-bottom: 4px;
+    }
+
+.price-box {
+    font-weight: bold;
+}
+/* Footer */
 footer {
     background: darkgreen;
     color: white;

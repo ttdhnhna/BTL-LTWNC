@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "rbQ5tO44t4ICs8M297VlYV3M7JHz9ay6Po9t450+CNhL81OU+/4Lnee2TtIzS7DyPEtIQ+tqTni0NqobwJMf9A==",
+  "dgSpecHash": "h7QLCQs9q7l93htjsxXFkJbIF7rZZYqPcCjgWKjMO2I3uEASGqAQUCjfRyrG+WPqnXmUWZSdEh+SB3BCZLTO9Q==",
   "success": true,
   "projectFilePath": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\BTL-LTWNC.csproj",
   "expectedPackageFiles": [
@@ -49,6 +49,7 @@
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\mono.texttemplating\\3.0.0\\mono.texttemplating.3.0.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\portable.bouncycastle\\1.9.0\\portable.bouncycastle.1.9.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.clientmodel\\1.0.0\\system.clientmodel.1.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.codedom\\6.0.0\\system.codedom.6.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.collections.immutable\\7.0.0\\system.collections.immutable.7.0.0.nupkg.sha512",

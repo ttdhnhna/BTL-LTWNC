@@ -340,3 +340,4 @@ D:\FITHOU\Lập trình Web\BTL-LTWNC\obj\Debug\net8.0\refint\BTL-LTWNC.dll
 D:\FITHOU\Lập trình Web\BTL-LTWNC\obj\Debug\net8.0\BTL-LTWNC.pdb
 D:\FITHOU\Lập trình Web\BTL-LTWNC\obj\Debug\net8.0\BTL-LTWNC.genruntimeconfig.cache
 D:\FITHOU\Lập trình Web\BTL-LTWNC\obj\Debug\net8.0\ref\BTL-LTWNC.dll
+D:\FITHOU\Lập trình Web\BTL-LTWNC\bin\Debug\net8.0\BouncyCastle.Crypto.dll

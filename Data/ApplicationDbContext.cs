@@ -13,5 +13,7 @@ namespace BTL_LTWNC.Data
         public DbSet<Vehicle> tbl_Vehicle { get; set; }
 
         public DbSet<Post> tbl_Post { get; set; }
+
+        public DbSet<Post> tbl_User { get; set; }
     }
 }

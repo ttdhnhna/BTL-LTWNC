@@ -44,10 +44,10 @@
         <section class="filter-container">
             <h3 class="filter-title">Bộ lọc</h3>
             <div class="filter">
-                <div class="filter-group">
+                @* <div class="filter-group">
                     <label><input type="radio" name="vehicle" checked> Ô tô</label>
                     <label><input type="radio" name="vehicle"> Xe máy</label>
-                </div>
+                </div> *@
                 <select>
                     <option>Loại xe</option>
                 </select>
@@ -68,20 +68,20 @@
         <section class="listing">
             <div class="listing-header">
                 <h2>Danh sách bài đăng</h2>
-                <a asp-controller="Posts" asp-action="AddPost" class="create-post-btn">Tạo bài đăng</a>
+                <a asp-controller="Posts" asp-action="AddPost" class="btn btn-success">Tạo bài đăng</a>
             </div>
             @foreach(var item in Model)
             {
                 <article class="listing-item">
                     @if (!string.IsNullOrEmpty(item.Vehicle?.imgURL))
                     {
-                        <img src="~/uploads/@item.Vehicle.imgURL" alt=@item.Vehicle.sCarName width="200" />
+                        <img src="~/uploads/@item.Vehicle.imgURL" alt="@item.Vehicle.sCarName" width="200" />
                     }
                     <div class="listing-content">
                         <h3>@item.Vehicle.sCarName</h3>
                         <p>⭐ ⭐ ⭐ ⭐ ⭐ | @item.Vehicle.fGiaThue / ngày</p>
                     </div>
-                    <button>Chi tiết</button>
+                    <a class="btn btn-success" asp-action="PostDetail" asp-route-id="@item.Post.Id">Chi tiết</a>
                 </article>
             }
         </section>
