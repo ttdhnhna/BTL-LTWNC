@@ -1,0 +1,163 @@
+﻿@model List<PostvsVehicle>
+@{
+    ViewData["Title"] = "Quản lý bài viết";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/QL_User.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="~/images/Logo.png" alt="Logo" class="logo" />
+        </div>
+    </header>
+
+    <a href="/Admin/TrangChu_Admin" class="home-btn">Trang chủ</a>
+    <h2 class="page-title">Quản lý bài viết</h2>
+
+    <main class="container">
+
+        @* <div class="user-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="name">Họ và tên</label>
+                    <input type="text" id="name" placeholder="Nhập họ và tên">
+                    <span id="nameError" class="error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="cccd">Số CCCD/CMND</label>
+                    <input type="text" id="cccd" placeholder="Nhập số CCCD/CMND">
+                    <span id="cccdError" class="error"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="dob">Ngày tháng năm sinh</label>
+                    <input type="date" id="dob">
+                    <span id="dobError" class="error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Số điện thoại</label>
+                    <input type="text" id="phone" placeholder="Nhập số điện thoại">
+                    <span id="phoneError" class="error"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="example@gmail.com">
+                    <span id="emailError" class="error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="password">Mật khẩu</label>
+                    <input type="password" id="password" placeholder="Nhập mật khẩu">
+                    <span id="passwordError" class="error"></span>
+                </div>
+            </div>
+        </div>
+*@
+        <div class="search-container">
+            <div class="search-box">
+                <form asp-action="SearchPost" method="get">
+                    <div class="filter d-flex gap-2">
+                        <input type="text" name="carName" placeholder="Tên xe" class="form-control" />
+                        <input type="text" name="price" placeholder="Giá (VNĐ)" class="form-control" />
+                        <input type="text" name="location" placeholder="Địa điểm thuê" class="form-control" />
+                        <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+ 
+
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Hình ảnh</th>
+                        <th>Tên xe</th>
+                        <th>Biển số</th>
+                        <th>Địa điểm cho thuê</th>
+                        <th>Giá</th>
+                        <th>Mô tả</th>
+                        <th>Xóa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model == null || !Model.Any())
+                    {
+                        <div class="alert alert-warning" role="alert">
+                            Không tìm thấy bài viết!
+                        </div>
+                    }
+                    else
+                    {
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Vehicle.PK_iVehicleID</td>
+                                <td>
+                                    <img src="~/uploads/@item.Vehicle.imgURL" alt="@item.Vehicle.sCarName" width="200" />
+                                </td>
+                                <td>@item.Vehicle.sCarName</td>
+                                <td>@item.Vehicle.sCarNum</td>
+                                <td>@item.Vehicle.sDiaDiem</td>
+                                <td>@string.Format("{0:N0}đ", @item.Vehicle.fGiaThue)</td>
+                                <td>@item.Vehicle.sMoTa</td>
+                                <td>
+                                    <form asp-controller="Posts" asp-action="DeletePost" asp-route-id="@item.Post.Id" method="post" style="display:inline;" onsubmit="return confirmDelete();">
+                                        <button type="submit" class="btn btn-danger">Xóa bài</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    }                   
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-left">
+            <p>Liên hệ</p>
+            <p>Công ty Velogo</p>
+            <p>Giấy ĐKKD số 0108363104</p>
+            <p>Cơ sở KH&ĐT Hà Nội</p>
+        </div>
+        <div class="footer-center1"></div>
+        <div class="footer-center">
+            <p>Chính sách</p>
+            <p>Chính sách bảo mật thông tin</p>
+            <p>Quy chế hoạt động</p>
+            <p>Quy trình giải quyết khiếu nại</p>
+            <p>Chính sách hủy bỏ</p>
+        </div>
+        <div class="footer-center2"></div>
+        <div class="footer-right">
+            <p>Hỗ trợ</p>
+            <p>Hướng dẫn thuê xe</p>
+            <p>Hợp đồng thuê xe tự động</p>
+            <p>Cẩm nang cho thuê xe tự lái</p>
+            <p>Câu hỏi thường gặp</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+@section Scripts {
+    <script>
+        function confirmDelete() {
+            return confirm("Bạn có chắc muốn xóa bài viết này không?");
+        }
+    </script>
+}
+</html>

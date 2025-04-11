@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
 using System.Security.Claims;
 
 namespace BTL_LTWNC.Controllers
@@ -32,13 +33,14 @@ namespace BTL_LTWNC.Controllers
         [HttpGet]
         public IActionResult Posts()
         {
-            var posts = _context.tbl_Post.ToList();
+            /*var posts = _context.tbl_Post.ToList();
             var vehicles = _context.tbl_Vehicle.ToList();
             var postvsvehicleList = posts.Select(post => new PostvsVehicle
             {
                 Post = post,
                 Vehicle = vehicles.FirstOrDefault(v => v.PK_iVehicleID == post.vehicleID)
-            }).ToList();
+            }).ToList();*/
+            var postvsvehicleList = _postRepository.GetAllPostsWithVehicle();
             return View(postvsvehicleList);
         }
 
@@ -76,6 +78,14 @@ namespace BTL_LTWNC.Controllers
         public async Task<IActionResult> DeletePost(int id)
         {
             var post = await _context.tbl_Post.FirstOrDefaultAsync(p => p.Id == id);
+
+            var userId = HttpContext.Session.GetInt32("UserId");
+
+            if (post == null || post.userID != userId)
+            {
+                return Unauthorized();
+            }
+
             if (post != null)
             {
                 var vehicle = await _context.tbl_Vehicle.FirstOrDefaultAsync(v => v.PK_iVehicleID == post.vehicleID);
@@ -95,8 +105,13 @@ namespace BTL_LTWNC.Controllers
         public async Task<IActionResult> UpdatePost(int id)
         {
             var post = await _context.tbl_Post.FirstOrDefaultAsync(p => p.Id == id);
-            if (post == null)
-                return NotFound();
+
+            var userId = HttpContext.Session.GetInt32("UserId");
+
+            if (post == null || post.userID != userId)
+            {
+                return Unauthorized();
+            }
 
             var vehicle = await _context.tbl_Vehicle.FirstOrDefaultAsync(v => v.PK_iVehicleID == post.vehicleID);
             if (vehicle == null)
@@ -120,6 +135,30 @@ namespace BTL_LTWNC.Controllers
             ViewData["imgURL"] = vehicle.imgURL;
 
             return View(model);
+        }
+
+        [HttpGet]
+        public IActionResult SearchPost(string carName, string price, string location)
+        {
+            //Phần repo này có cách hoạt động tương tự với phần lấy posts ở trên chức năng posts nhưng thôi để thế này cho đỡ bị lặp lại
+            var postvsvehicleList = _postRepository.GetAllPostsWithVehicle();
+            if (!string.IsNullOrEmpty(carName))
+            {
+                postvsvehicleList = postvsvehicleList.Where(p => p.Vehicle.sCarName.Contains(carName)).ToList();
+            }
+
+            if (!string.IsNullOrEmpty(price) && decimal.TryParse(price, out decimal maxPrice))
+            {
+                postvsvehicleList = postvsvehicleList.Where(p => p.Vehicle.fGiaThue <= maxPrice).ToList();
+            }
+
+            if (!string.IsNullOrEmpty(location))
+            {
+                postvsvehicleList = postvsvehicleList.Where(p => p.Vehicle.sDiaDiem.Contains(location)).ToList();
+            }
+
+            var results = postvsvehicleList.ToList();
+            return View("Posts", results);
         }
 
         [HttpPost]
@@ -246,9 +285,16 @@ namespace BTL_LTWNC.Controllers
                         _vehicleRepository.AddVehicle(vehicle);
                         await _context.SaveChangesAsync();
 
+                        var userId = HttpContext.Session.GetInt32("UserId");
+
+                        if (userId == null)
+                        {
+                            return RedirectToAction("Login", "Account");
+                        }
+
                         var post = new Post 
                         {
-                            userID = 2,
+                            userID = userId.Value,
                             vehicleID = vehicle.PK_iVehicleID,
                             dTgDangbai = DateTime.Now
                         };

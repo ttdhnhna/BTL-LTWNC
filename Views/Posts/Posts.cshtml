@@ -22,7 +22,38 @@
                 <li><a href="#">Thông báo</a></li>
                 <li><a href="#">Lịch sử</a></li>
                 <li class="user-dropdown">
-                    <a href="#">User Name ▾</a>
+                    @{
+                        var user = Context.Session.GetString("User");
+                        string userName = "";
+
+                        if (!string.IsNullOrEmpty(user))
+                        {
+                            userName = user.Split('@')[0];
+                        }
+                    }
+                    <div class="user-info">
+                        @if (string.IsNullOrEmpty(user))
+                        {
+                            <!-- Chưa đăng nhập -->
+                            <div class="auth-buttons">
+                                <a href="/Account/Login" class="btn-login">Đăng nhập</a>
+                                <a href="/Account/Register" class="btn-register">Đăng ký</a>
+                            </div>
+                        }
+                        else
+                        {
+                            <!-- Đã đăng nhập -->
+                            <img src="~/images/icon_user.jpg" alt="User Icon" class="user-icon">
+                            <div class="user-details">
+                                <p class="user-name">@userName</p>
+                                <div class="dropdown-btn">&#9660;</div>
+                            </div>
+                            <div class="dropdown-content">
+                                <a href="/Account/Login">Đăng xuất</a>
+                                <a href="/Account/Login">Tài khoản</a>
+                            </div>
+                        }
+                    </div>
                 </li>
             </ul>
         </nav>
@@ -33,8 +64,8 @@
 
     <nav class="main-nav">
         <ul>
-            <li><a href="#">Trang chủ</a></li>
-            <li><a href="#">Bài đăng</a></li>
+            <li><a href="/Account/Home">Trang chủ</a></li>
+            <li><a href="/Posts/Posts">Bài đăng</a></li>
             <li><a href="#">Giới thiệu</a></li>
         </ul>
     </nav>
@@ -43,25 +74,14 @@
         <!-- Bộ lọc -->
         <section class="filter-container">
             <h3 class="filter-title">Bộ lọc</h3>
-            <div class="filter">
-                @* <div class="filter-group">
-                    <label><input type="radio" name="vehicle" checked> Ô tô</label>
-                    <label><input type="radio" name="vehicle"> Xe máy</label>
-                </div> *@
-                <select>
-                    <option>Loại xe</option>
-                </select>
-                <select>
-                    <option>Hãng xe</option>
-                </select>
-                <input type="text" placeholder="Giá">
-                <select>
-                    <option>Tỉnh/Thành phố</option>
-                </select>
-                <select>
-                    <option>Quận/Huyện</option>
-                </select>
-            </div>
+            <form asp-action="SearchPost" method="get">
+                <div class="filter d-flex gap-2">
+                    <input type="text" name="carName" placeholder="Tên xe" class="form-control" />
+                    <input type="text" name="price" placeholder="Giá (VNĐ)" class="form-control" />
+                    <input type="text" name="location" placeholder="Địa điểm thuê" class="form-control" />
+                    <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+                </div>
+            </form>
         </section>
 
         <!-- Danh sách bài đăng -->
@@ -70,20 +90,29 @@
                 <h2>Danh sách bài đăng</h2>
                 <a asp-controller="Posts" asp-action="AddPost" class="btn btn-success">Tạo bài đăng</a>
             </div>
-            @foreach(var item in Model)
+            @if (Model == null || !Model.Any())
             {
-                <article class="listing-item">
-                    @if (!string.IsNullOrEmpty(item.Vehicle?.imgURL))
-                    {
-                        <img src="~/uploads/@item.Vehicle.imgURL" alt="@item.Vehicle.sCarName" width="200" />
-                    }
-                    <div class="listing-content">
-                        <h3>@item.Vehicle.sCarName</h3>
-                        <p>⭐ ⭐ ⭐ ⭐ ⭐ | @item.Vehicle.fGiaThue / ngày</p>
-                    </div>
-                    <a class="btn btn-success" asp-action="PostDetail" asp-route-id="@item.Post.Id">Chi tiết</a>
-                </article>
+                <div class="alert alert-warning" role="alert">
+                    Không có bài viết!
+                </div>
             }
+            else
+            {
+                @foreach (var item in Model)
+                {
+                    <article class="listing-item">
+                        @if (!string.IsNullOrEmpty(item.Vehicle?.imgURL))
+                        {
+                            <img src="~/uploads/@item.Vehicle.imgURL" alt="@item.Vehicle.sCarName" width="200" />
+                        }
+                        <div class="listing-content">
+                            <h3>@item.Vehicle.sCarName</h3>
+                            <p>⭐ ⭐ ⭐ ⭐ ⭐ | @string.Format("{0:N0}đ",@item.Vehicle.fGiaThue) / ngày</p>
+                        </div>
+                        <a class="btn btn-success" asp-action="PostDetail" asp-route-id="@item.Post.Id">Chi tiết</a>
+                    </article>
+                }
+            }          
         </section>
     </div>
 

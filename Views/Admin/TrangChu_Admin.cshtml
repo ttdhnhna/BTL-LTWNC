@@ -1,0 +1,127 @@
+@{
+    ViewData["Title"] = "Trang Chủ Admin";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chủ Admin</title>
+    <link rel="stylesheet" href="~/css/TC_admin.css">
+    <link rel="stylesheet" href="~/css/admin_TC.css">
+</head>
+<body>
+
+   <!-- ====== Header ====== -->
+    <header>
+        <div class="logo-container">
+            <img src="~/images/Logo.png" alt="Logo" class="logo">
+        </div>
+        <div class="user-info">
+            <img src="~/images/icon_user.jpg" alt="User Icon" class="user-icon">
+            <div class="user-details">
+                <p class="user-name">Admin</p>
+                <div class="dropdown-btn">&#9660;</div> 
+            </div>
+            <div class="dropdown-content">
+                <a href="/Account/Login">Đăng xuất</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ====== Banner ====== -->
+    <div class="banner">
+        <img src="~/images/VeloGo.png" alt="VeloGo Banner" class="banner-img">
+    </div>
+
+    <!-- ====== Navigation Menu ====== -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="/Admin/Home" class="menu-link active">Trang chủ</a></li>
+            <li><a href="/Admin/QL_Posts" class="menu-link">Quản  lý  bài đăng</a></li>
+            @* <li><a href="/Admin/Approve_Posts" class="menu-link">Duyệt bài đăng</a></li> *@
+            <li><a href="/Admin/QL_User" class="menu-link">Quản lý tài khoản</a></li>
+        </ul>
+    </nav>
+
+    <!-- ====== Body Content ====== -->
+    <h2>Lợi ích</h2>
+    <div class="body-content-1">
+        <div class="benefit">
+            <p><img src="~/images/list.jpg"></p>
+            <p><b>Nhiều lựa chọn</b></br>Hàng trăm loại xe được đa dạng ở nhiều địa điểm trên cả nước, 
+                phù hợp với mục tiêu của bạn.</p>
+        </div>
+        <div class="benefit">
+            <p><img src="~/images/tienich.jpg"></p>
+            <p><b>Tiện ích</b></br>Dễ dàng tìm kiếm, so sánh và đặt chiếc xe như ý chỉ bằng vài click chuột.</p>
+        </div>
+        <div class="benefit">
+            <p><img src="~/images/tincay.jpg"></p>
+            <p><b>Đáng tin cậy</b></br>Tất cả các xe được đăng bài cho thuê đều là các loại xe tốt, 
+                được bảo dưỡng thường xuyên. Đảm bảo trải nghiệm tốt nhất khi thuê xe.</p>
+        </div>
+        <div class="benefit">
+            <p><img src="~/images/bh.jpg"></p>
+            <p><b>Bảo hiểm</b></br>An tâm với các gói ưu đãi hoặc luôn tiếp nhận đơn khiếu nại nếu gặp sự cố khi thuêthuê.</p>
+        </div>
+        <div class="benefit">
+            <p><img src="~/images/gia.jpg"></p>
+            <p><b>Giá cả hợp lý</b></br>Giá thuê xe luôn được công khai và minh bạch. Không có chi phí phát sinh nào khác.</p>
+        </div>
+        <div class="benefit">
+            <p><img src="~/images/247.jpg"></p>
+            <p><b>Hỗ trợ 24/7</b></br>Đội ngũ nhân viên luôn sẵn sàng hỗ trợ bạn 24/7 qua hotline hoặc chat trực tuyến.</p>
+        </div>
+    </div>
+
+    <h2>Quy trình đặt xe</h2>
+
+    <div class="timeline-container">
+        <div class="timeline">
+            <div class="dot"><span>Tìm xe</span></div>
+            <div class="dot"><span>Đặt xe</span></div>
+            <div class="dot"><span>Hoàn tất đặt xe</span></div>
+            <div class="dot"><span>Trả xe</span></div>
+        </div>
+    </div>
+
+    <div class="body-content-2">
+        <div class="qt">
+            <p><b>Tìm xe</b></br>Truy cập website hoặc app Chungxe, lựa chọn thời gian & địa điểm bạn cần thuê xe.</p>
+            <p><b>Đặt xe</b></br>Dựa trên hệ thống so sánh giá, lựa chọn chiếc xe tương ý & gửi yêu cầu về cho chúng tôi.</p>
+            <p><b>Hoàn tất đặt xe</b></br>Hoàn tất thủ tục, nhận xe và bắt đầu quá trình. Bạn có thể nhận xe tại nhà hoặc đại lý của chúng tôi.</p>
+            <p><b>Trả xe</b></br>Trả xe sau khi kết thúc hành động. Chấm điểm dịch vụ để cải thiện chất lượng.</p>
+        </div>
+    </div>
+
+
+    <!-- ====== Footer ====== -->
+    <footer>
+        <div class="footer-left">
+            <p>Liên hệ</p>
+            <p>Công ty Velogo</p>
+            <p>Giấy ĐKKD số 0108363104</p>
+            <p>Cơ sở KH&ĐT Hà Nội</p>
+        </div>
+        <div class="footer-center1"></div>
+        <div class="footer-center">
+            <p>Chính sách</p>
+            <p>Chính sách bảo mật thông tin</p>
+            <p>Quy chế hoạt động</p>
+            <p>Quy trình giải quyết khiếu nại</p>
+            <p>Chính sách hủy bỏ</p>
+        </div>
+        <div class="footer-center2"></div>
+        <div class="footer-right">
+            <p>Hỗ trợ</p>
+            <p>Hướng dẫn thuê xe</p>
+            <p>Hợp đồng thuê xe tự động</p>
+            <p>Cẩm nang cho thuê xe tự lái</p>
+            <p>Câu hỏi thường gặp</p>
+        </div>
+    </footer>
+
+</body>
+</html>

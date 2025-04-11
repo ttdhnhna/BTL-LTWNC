@@ -26,6 +26,30 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\FITHOU\Lập trình Web\BTL-LTWNC
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/FITHOU/Lập trình Web/BTL-LTWNC/Views/Account/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FITHOU/Lập trình Web/BTL-LTWNC/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FITHOU/Lập trình Web/BTL-LTWNC/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FITHOU/Lập trình Web/BTL-LTWNC/Views/Admin/QL_Posts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUUxfUG9zdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FITHOU/Lập trình Web/BTL-LTWNC/Views/Admin/QL_User.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUUxfVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FITHOU/Lập trình Web/BTL-LTWNC/Views/Admin/TrangChu_Admin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVHJhbmdDaHVfQWRtaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/FITHOU/Lập trình Web/BTL-LTWNC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

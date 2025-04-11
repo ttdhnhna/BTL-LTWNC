@@ -1,9 +1,1 @@
-﻿Về cơ bản thì phần model với repo bạn cop vào trong project của bạn xong chỉnh lại phần namespace là được(model thì cần vehicle, vehicledto, post, postvsvehicle thôi)
-phần folder migrations thì không cần quan tâm mà cop làm gì cả.
-phần view thì bạn cop lại những chỗ form nhập thông tin vào phần view của bạn là được cho đỡ phải mất thời gian chỉnh lại
-tên view làm gì cả
-phần controller thì bạn chỉ cần cop lại code ở trong file postcontroller thôi (cop theo tên view mà bạn đặt đừng
-cop cả là nó sẽ bị xung đột code đấy)
-và nhớ thay đổi namespace theo project của bạn
-còn đâu thì project của tôi không cài thêm package nào cả ngoài entityframeworkcore.sqlserver và entityframework.tools 
-nên chắc không cần phải cài thêm gì cả đâu
+﻿

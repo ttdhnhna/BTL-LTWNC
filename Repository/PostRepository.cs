@@ -17,5 +17,19 @@ namespace BTL_LTWNC.Repository
             _context.Add(post);
             _context.SaveChanges();
         }
+
+        public List<PostvsVehicle> GetAllPostsWithVehicle()
+        {
+            var postvsvehicle = (from post in _context.tbl_Post
+                                 join vehicle in _context.tbl_Vehicle
+                                 on post.vehicleID equals vehicle.PK_iVehicleID
+                                 select new PostvsVehicle
+                                 {
+                                     Post = post,
+                                     Vehicle = vehicle
+                                 }).ToList();
+
+            return postvsvehicle;
+        }
     }
 }

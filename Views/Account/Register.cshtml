@@ -1,0 +1,171 @@
+@model User
+@{
+    ViewData["Title"] = "Đăng ký";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký</title>
+    <link rel="stylesheet" href="~/css/account.css">
+</head>
+
+<body>
+    <img src="~/images/backgroud_LG.jpg" alt="bgr" class="bgr" />
+
+    <!-- Nội dung chính của trang -->
+    <main class="main-content">
+        <div class="form-container">
+            <!-- Logo trong form -->
+            <div class="logo-container">
+                <img src="~/images/Logo.png" alt="Logo" class="logo" />
+            </div>
+
+            <h2>ĐĂNG KÝ</h2>
+
+            <form id="registerForm" class="registration-form">
+                <div class="form-group">
+                    <label for="sUserName">Họ và Tên:</label>
+                    <input type="text" id="sUserName" required placeholder="Nhập họ và tên" />
+                    <span class="error" id="nameError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="sEmail">Email:</label>
+                    <input type="email" id="sEmail" required placeholder="Nhập địa chỉ email" />
+                    <span class="error" id="emailError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="dNS">Ngày sinh:</label>
+                    <input type="date" id="dNS" required />
+                    <span class="error" id="dobError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="sCCCD">CCCD:</label>
+                    <input type="text" id="sCCCD" required placeholder="Nhập số CCCD (12 số)" />
+                    <span class="error" id="cccdError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="sSDT">Số điện thoại:</label>
+                    <input type="text" id="sSDT" required placeholder="Nhập số điện thoại (bắt đầu bằng 0)" />
+                    <span class="error" id="phoneError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="sPW">Mật khẩu:</label>
+                    <input type="password" id="sPW" required placeholder="Tạo mật khẩu" />
+                    <span class="error" id="passwordError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="sConfirmPW">Nhập lại mật khẩu:</label>
+                    <input type="password" id="sConfirmPW" required placeholder="Nhập lại mật khẩu" />
+                    <span class="error" id="confirmPasswordError"></span>
+                </div>
+
+                <button type="submit" class="submit-button">Đăng ký</button>
+
+            </form>
+            <a href="/Account/Login">Đã có tài khoản? Đăng nhập ở đây</a>
+        </div>
+    </main>
+
+    <script src="~/js/register.js"></script>
+    <script>
+    $(document).ready(function () {
+        $("#registerForm").submit(function (e) {
+            e.preventDefault(); 
+
+            let isValid = true;
+
+            let name = $("#sUserName").val().trim();
+            let email = $("#sEmail").val().trim();
+            let dob = $("#dNS").val();
+            let cccd = $("#sCCCD").val().trim();
+            let phone = $("#sSDT").val().trim();
+            let password = $("#sPW").val().trim();
+            let confirmPassword = $("#sConfirmPW").val().trim();
+
+            let nameRegex = /^[a-zA-ZÀ-ỹ\s]{3,50}$/;
+            let cccdRegex = /^\d{12}$/;
+            let phoneRegex = /^0\d{9}$/;
+            let passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+
+            $(".error").text("");
+
+            if (!nameRegex.test(name)) {
+                $("#nameError").text("Họ tên không hợp lệ.");
+                isValid = false;
+            }
+            
+            let birthDate = new Date(dob);
+            let today = new Date();
+            let age = today.getFullYear() - birthDate.getFullYear();
+            let monthDiff = today.getMonth() - birthDate.getMonth();
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            if (birthDate >= today || isNaN(birthDate)) {
+                $("#dobError").text("Ngày sinh không hợp lệ.");
+                isValid = false;
+            } else if (age < 16) {
+                $("#dobError").text("Bạn phải đủ 16 tuổi.");
+                isValid = false;
+            }
+
+            if (!cccdRegex.test(cccd)) {
+                $("#cccdError").text("CCCD phải có 12 chữ số.");
+                isValid = false;
+            }
+            if (!phoneRegex.test(phone)) {
+                $("#phoneError").text("Số điện thoại không hợp lệ.");
+                isValid = false;
+            }
+            if (!passwordRegex.test(password)) {
+                $("#passwordError").text("Mật khẩu ít nhất 6 ký tự, gồm cả chữ và số.");
+                isValid = false;
+            }
+            if (password !== confirmPassword) {
+                $("#confirmPasswordError").text("Mật khẩu không khớp.");
+                isValid = false;
+            }
+
+            if (!isValid) return;
+
+            $.ajax({
+                url: "/Account/Register",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({
+                    sUserName: name,
+                    sEmail: email,
+                    dNS: dob,
+                    sCCCD: cccd,
+                    sSDT: phone,
+                    sPW: password,
+                    sConfirmPW: confirmPassword 
+                }),
+                success: function (response) {
+                    if (response.success) {
+                        alert(response.message);
+                        window.location.href = "/Account/Login";
+                    } else {
+                        alert("Lỗi: " + response.message);
+                    }
+                },
+                error: function (xhr) {
+                    alert("Lỗi hệ thống: " + xhr.responseText);
+                }
+            });
+
+        });
+    });
+    </script>
+</body>
+</html>

@@ -4,6 +4,7 @@
 @model PostvsVehicle
 @{
     ViewData["Title"] = "Chi tiết bài đăng";
+    var loggedInUserId = Context.Session.GetInt32("UserId");
 }
 <!DOCTYPE html>
 <html lang="vi">
@@ -22,11 +23,39 @@
             <ul>
                 <li><a href="#">Thông báo</a></li>
                 <li><a href="#">Lịch sử</a></li>
-                <li class="dropdown">
-                    <button class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown">user name</button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
-                    </ul>
+                <li class="user-dropdown">
+                    @{
+                        var user = Context.Session.GetString("User");
+                        string userName = "";
+
+                        if (!string.IsNullOrEmpty(user))
+                        {
+                            userName = user.Split('@')[0];
+                        }
+                    }
+                    <div class="user-info">
+                        @if (string.IsNullOrEmpty(user))
+                        {
+                            <!-- Chưa đăng nhập -->
+                            <div class="auth-buttons">
+                                <a href="/Account/Login" class="btn-login">Đăng nhập</a>
+                                <a href="/Account/Register" class="btn-register">Đăng ký</a>
+                            </div>
+                        }
+                        else
+                        {
+                            <!-- Đã đăng nhập -->
+                            <img src="~/images/icon_user.jpg" alt="User Icon" class="user-icon">
+                            <div class="user-details">
+                                <p class="user-name">@userName</p>
+                                <div class="dropdown-btn">&#9660;</div>
+                            </div>
+                            <div class="dropdown-content">
+                                <a href="/Account/Login">Đăng xuất</a>
+                                <a href="/Account/Login">Tài khoản</a>
+                            </div>
+                        }
+                    </div>
                 </li>
             </ul>
         </nav>
@@ -51,7 +80,7 @@
                 <h5>Mô tả</h5>
                     <p>Địa điểm cho thuê: @Model.Vehicle.sDiaDiem</p>
                     <p>Biển số: @Model.Vehicle.sCarNum</p>
-                    <p>Giá: @Model.Vehicle.fGiaThue đ</p>
+                    <p>Giá: @string.Format("{0:N0}đ", @Model.Vehicle.fGiaThue)</p>
                 <p><strong>Tính năng của xe:</strong></p>
                 <ul class="feature-list">
                     <li>@Model.Vehicle.sTinhNang</li>
@@ -75,12 +104,15 @@
         </div>
 
         <div class="col-md-6">
+            @if (loggedInUserId != null && loggedInUserId == Model.Post.userID)
+             {
                 <div class="d-flex justify-content-between">
                     <form asp-action="DeletePost" asp-route-id="@Model.Post.Id" method="post" style="display:inline;" onsubmit="return confirmDelete();">
                         <button type="submit" class="btn btn-danger">Xóa bài</button>
                     </form>
                     <a asp-action="UpdatePost" asp-route-id="@Model.Post.Id" class="btn btn-success">Sửa bài</a>
                 </div>
+            }
 
             <div class="card-custom mb-3">
                 <h6>GIAO XE</h6>

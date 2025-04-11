@@ -34,7 +34,38 @@
                 <li><a href="#">Thông báo</a></li>
                 <li><a href="#">Lịch sử</a></li>
                 <li class="user-dropdown">
-                    <a href="#">User Name ▾</a>
+                    @{
+                        var user = Context.Session.GetString("User");
+                        string userName = "";
+
+                        if (!string.IsNullOrEmpty(user))
+                        {
+                            userName = user.Split('@')[0];
+                        }
+                    }
+                    <div class="user-info">
+                        @if (string.IsNullOrEmpty(user))
+                        {
+                            <!-- Chưa đăng nhập -->
+                            <div class="auth-buttons">
+                                <a href="/Account/Login" class="btn-login">Đăng nhập</a>
+                                <a href="/Account/Register" class="btn-register">Đăng ký</a>
+                            </div>
+                        }
+                        else
+                        {
+                            <!-- Đã đăng nhập -->
+                            <img src="~/images/icon_user.jpg" alt="User Icon" class="user-icon">
+                            <div class="user-details">
+                                <p class="user-name">@userName</p>
+                                <div class="dropdown-btn">&#9660;</div>
+                            </div>
+                            <div class="dropdown-content">
+                                <a href="/Account/Login">Đăng xuất</a>
+                                <a href="/Account/Login">Tài khoản</a>
+                            </div>
+                        }
+                    </div>
                 </li>
             </ul>
         </nav>

@@ -1,0 +1,150 @@
+@model List<User>
+@{
+    ViewData["Title"] = "Quản lý tài khoản";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/QL_User.css">
+    <script src="~/js/admin/QL_User/search_user.js"></script> 
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="~/images/Logo.png" alt="Logo" class="logo" />
+        </div>
+    </header>
+
+    <a href="/Admin/TrangChu_Admin" class="home-btn">Trang chủ</a>
+    <h2 class="page-title">Quản lý tài khoản</h2>
+
+    <main class="container">
+        
+        <div class="user-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="name">Họ và tên</label>
+                    <input type="text" id="name" placeholder="Nhập họ và tên">
+                    <span id="nameError" class="error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="cccd">Số CCCD/CMND</label>
+                    <input type="text" id="cccd" placeholder="Nhập số CCCD/CMND">
+                    <span id="cccdError" class="error"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="dob">Ngày tháng năm sinh</label>
+                    <input type="date" id="dob">
+                    <span id="dobError" class="error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Số điện thoại</label>
+                    <input type="text" id="phone" placeholder="Nhập số điện thoại">
+                    <span id="phoneError" class="error"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="example@gmail.com">
+                    <span id="emailError" class="error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="password">Mật khẩu</label>
+                    <input type="password" id="password" placeholder="Nhập mật khẩu">
+                    <span id="passwordError" class="error"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-container">
+            <div class="search-actions">
+                <button onclick="addUser()">Thêm mới</button>
+                <button id="saveButton">Lưu</button>
+            </div>
+            <div class="search-box">
+                <input type="text" id="searchBox" placeholder="Nhập gmail">
+                <button onclick="searchUsers()">Tìm kiếm</button>
+            </div>
+        </div>
+
+
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Họ và Tên</th>
+                        <th>Email</th>
+                        <th>Ngày sinh</th>
+                        <th>Số CCCD</th>
+                        <th>Số điện thoại</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var user in Model)
+                    {
+                        <tr id="row_@user.PK_iUserID" 
+                            data-id="@user.PK_iUserID" 
+                            data-name="@user.sUserName" 
+                            data-email="@user.sEmail"
+                            data-dob="@user.dNS?.ToString("yyyy-MM-dd")"
+                            data-cccd="@user.sCCCD" 
+                            data-phone="@user.sSDT"
+                            data-password="@user.sPW">
+                            <td>@user.PK_iUserID</td>
+                            <td class="user-name">@user.sUserName</td>
+                            <td class="user-email">@user.sEmail</td>
+                            <td class="user-dob">@user.dNS?.ToString("yyyy-MM-dd")</td>
+                            <td class="user-cccd">@user.sCCCD</td>
+                            <td class="user-phone">@user.sSDT</td>
+                            <td>
+                                <button class="btn-delete" onclick="event.stopPropagation(); deleteUser(@user.PK_iUserID)">Xóa</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-left">
+            <p>Liên hệ</p>
+            <p>Công ty Velogo</p>
+            <p>Giấy ĐKKD số 0108363104</p>
+            <p>Cơ sở KH&ĐT Hà Nội</p>
+        </div>
+        <div class="footer-center1"></div>
+        <div class="footer-center">
+            <p>Chính sách</p>
+            <p>Chính sách bảo mật thông tin</p>
+            <p>Quy chế hoạt động</p>
+            <p>Quy trình giải quyết khiếu nại</p>
+            <p>Chính sách hủy bỏ</p>
+        </div>
+        <div class="footer-center2"></div>
+        <div class="footer-right">
+            <p>Hỗ trợ</p>
+            <p>Hướng dẫn thuê xe</p>
+            <p>Hợp đồng thuê xe tự động</p>
+            <p>Cẩm nang cho thuê xe tự lái</p>
+            <p>Câu hỏi thường gặp</p>
+        </div>
+    </footer>
+
+    <script src="~/js/admin/QL_User/QL_User.js"> </script>
+</body>
+</html>

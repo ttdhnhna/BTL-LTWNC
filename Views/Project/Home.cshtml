@@ -1,57 +1,176 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-    ViewData["Title"] = "Trang chủ";
+﻿@{
+    ViewData["Title"] = "Trang Chủ người dùng";
+    Layout = null;
 }
+
 <!DOCTYPE html>
 <html lang="vi">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="~/css/style1.css" asp-append-version="true" />
-    </head>
-    <body>
-        <div class="v13_247">
-        <div class="v13_249">
-            <div class="v13_250"></div>
-            <div class="v13_251"></div>
-            <span class="v13_252">Thông báo</span>
-            <div class="home-name"></div>
-            <div class="home-name"></div>
-            <div class="home-name"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ người dùng</title>
+    <link rel="stylesheet" href="~/css/TC_admin.css">
+    <link rel="stylesheet" href="~/css/admin_TC.css">
+</head>
+<style>
+    .btn-login, .btn-register {
+        background-color: white;
+        color: #095623;
+        padding: 6px 12px;
+        margin-left: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+
+        .btn-login:hover, .btn-register:hover {
+            text-decoration: none;
+            background-color: #2bff00;
+            color: black;
+        }
+
+    .auth-buttons {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+</style>
+<body>
+
+    <!-- ====== Header ====== -->
+    <header>
+        <div class="logo-container">
+            <img src="~/images/Logo.png" alt="Logo" class="logo">
         </div>
-            <div class="v13_270"></div>
-            <div class="home-name"></div>
-            <div class="v13_296"></div>
-            <span class="v13_297">Lợi ích</span>
-            <span class="v13_298">Hướng dẫn đặt xe</span>
-            <div class="v13_299"></div>
-        <div class="v13_302">
-            <div class="v13_303"></div>
-            <span class="v13_304">
-                Liên hệ
-                Công ty Velogo
-                Giấy ĐKKD số 0108363104
-                Cơ sở KH&ĐT Hà Nội
-            </span>
-            <span class="v13_305">
-                Chính sách
-                Chính sách bảo mật thông tin
-                Quy chế hoạt động
-                Quy trình giải quyết khiếu nại
-                Chính sách hủy bỏ
-            </span>
-            <span class="v13_306">
-                Hỗ trợ
-                Hướng dẫn thuê xe
-                Hợp đồng thuê xe tự động
-                Cẩm nang cho thuê xe tự lái
-                Câu hỏi thường gặp
-            </span>
+        @{
+            var user = Context.Session.GetString("User");
+            string userName = "";
+
+            if (!string.IsNullOrEmpty(user))
+            {
+                userName = user.Split('@')[0];
+            }
+        }
+        <div class="user-info">
+            @if (string.IsNullOrEmpty(user))
+            {
+                <!-- Chưa đăng nhập -->
+                <div class="auth-buttons">
+                    <a href="/Account/Login" class="btn-login">Đăng nhập</a>
+                    <a href="/Account/Register" class="btn-register">Đăng ký</a>
+                </div>
+            }
+            else
+            {
+                <!-- Đã đăng nhập -->
+                <img src="~/images/icon_user.jpg" alt="User Icon" class="user-icon">
+                <div class="user-details">
+                    <p class="user-name">@userName</p>
+                    <div class="dropdown-btn">&#9660;</div>
+                </div>
+                <div class="dropdown-content">
+                    <a href="/Account/Login">Đăng xuất</a>
+                    <a href="/Account/Login">Tài khoản</a>
+                </div>
+            }
         </div>
+    </header>
+
+    <!-- ====== Banner ====== -->
+    <div class="banner">
+        <img src="~/images/VeloGo.png" alt="VeloGo Banner" class="banner-img">
+    </div>
+
+    <!-- ====== Navigation Menu ====== -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="/Account/Home" class="menu-link active">Trang chủ</a></li>
+            <li><a href="/Posts/Posts" class="menu-link">Bài đăng</a></li>
+            <li><a href="#" class="menu-link">Giới thiệu</a></li>
+        </ul>
+    </nav>
+
+    <!-- ====== Body Content ====== -->
+    <h2>Lợi ích</h2>
+    <div class="body-content-1">
+        <div class="benefit">
+            <p><img src="~/images/list.jpg"></p>
+            <p>
+                <b>Nhiều lựa chọn</b></br>Hàng trăm loại xe được đa dạng ở nhiều địa điểm trên cả nước,
+                phù hợp với mục tiêu của bạn.
+            </p>
         </div>
-    </body>
+        <div class="benefit">
+            <p><img src="~/images/tienich.jpg"></p>
+            <p><b>Tiện ích</b></br>Dễ dàng tìm kiếm, so sánh và đặt chiếc xe như ý chỉ bằng vài click chuột.</p>
+        </div>
+        <div class="benefit">
+            <p><img src="~/images/tincay.jpg"></p>
+            <p>
+                <b>Đáng tin cậy</b></br>Tất cả các xe được đăng bài cho thuê đều là các loại xe tốt,
+                được bảo dưỡng thường xuyên. Đảm bảo trải nghiệm tốt nhất khi thuê xe.
+            </p>
+        </div>
+        <div class="benefit">
+            <p><img src="~/images/bh.jpg"></p>
+            <p><b>Bảo hiểm</b></br>An tâm với các gói ưu đãi hoặc luôn tiếp nhận đơn khiếu nại nếu gặp sự cố khi thuêthuê.</p>
+        </div>
+        <div class="benefit">
+            <p><img src="~/images/gia.jpg"></p>
+            <p><b>Giá cả hợp lý</b></br>Giá thuê xe luôn được công khai và minh bạch. Không có chi phí phát sinh nào khác.</p>
+        </div>
+        <div class="benefit">
+            <p><img src="~/images/247.jpg"></p>
+            <p><b>Hỗ trợ 24/7</b></br>Đội ngũ nhân viên luôn sẵn sàng hỗ trợ bạn 24/7 qua hotline hoặc chat trực tuyến.</p>
+        </div>
+    </div>
+
+    <h2>Quy trình đặt xe</h2>
+
+    <div class="timeline-container">
+        <div class="timeline">
+            <div class="dot"><span>Tìm xe</span></div>
+            <div class="dot"><span>Đặt xe</span></div>
+            <div class="dot"><span>Hoàn tất đặt xe</span></div>
+            <div class="dot"><span>Trả xe</span></div>
+        </div>
+    </div>
+
+    <div class="body-content-2">
+        <div class="qt">
+            <p><b>Tìm xe</b></br>Truy cập website hoặc app Chungxe, lựa chọn thời gian & địa điểm bạn cần thuê xe.</p>
+            <p><b>Đặt xe</b></br>Dựa trên hệ thống so sánh giá, lựa chọn chiếc xe tương ý & gửi yêu cầu về cho chúng tôi.</p>
+            <p><b>Hoàn tất đặt xe</b></br>Hoàn tất thủ tục, nhận xe và bắt đầu quá trình. Bạn có thể nhận xe tại nhà hoặc đại lý của chúng tôi.</p>
+            <p><b>Trả xe</b></br>Trả xe sau khi kết thúc hành động. Chấm điểm dịch vụ để cải thiện chất lượng.</p>
+        </div>
+    </div>
+
+
+    <!-- ====== Footer ====== -->
+    <footer>
+        <div class="footer-left">
+            <p>Liên hệ</p>
+            <p>Công ty Velogo</p>
+            <p>Giấy ĐKKD số 0108363104</p>
+            <p>Cơ sở KH&ĐT Hà Nội</p>
+        </div>
+        <div class="footer-center1"></div>
+        <div class="footer-center">
+            <p>Chính sách</p>
+            <p>Chính sách bảo mật thông tin</p>
+            <p>Quy chế hoạt động</p>
+            <p>Quy trình giải quyết khiếu nại</p>
+            <p>Chính sách hủy bỏ</p>
+        </div>
+        <div class="footer-center2"></div>
+        <div class="footer-right">
+            <p>Hỗ trợ</p>
+            <p>Hướng dẫn thuê xe</p>
+            <p>Hợp đồng thuê xe tự động</p>
+            <p>Cẩm nang cho thuê xe tự lái</p>
+            <p>Câu hỏi thường gặp</p>
+        </div>
+    </footer>
+
+</body>
 </html>

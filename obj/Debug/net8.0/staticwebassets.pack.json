@@ -5,6 +5,22 @@
       "PackagePath": "staticwebassets\\BTL-LTWNC.bundle.scp.css"
     },
     {
+      "Id": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\css\\QL_User.css",
+      "PackagePath": "staticwebassets\\css\\QL_User.css"
+    },
+    {
+      "Id": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\css\\TC_admin.css",
+      "PackagePath": "staticwebassets\\css\\TC_admin.css"
+    },
+    {
+      "Id": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\css\\account.css",
+      "PackagePath": "staticwebassets\\css\\account.css"
+    },
+    {
+      "Id": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\css\\admin_TC.css",
+      "PackagePath": "staticwebassets\\css\\admin_TC.css"
+    },
+    {
       "Id": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -25,6 +41,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\images\\247.jpg",
+      "PackagePath": "staticwebassets\\images\\247.jpg"
+    },
+    {
       "Id": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\images\\Logo.png",
       "PackagePath": "staticwebassets\\images\\Logo.png"
     },
@@ -35,6 +55,46 @@
     {
       "Id": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\images\\backgroud_LG.jpg",
       "PackagePath": "staticwebassets\\images\\backgroud_LG.jpg"
+    },
+    {
+      "Id": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\images\\bh.jpg",
+      "PackagePath": "staticwebassets\\images\\bh.jpg"
+    },
+    {
+      "Id": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\images\\gia.jpg",
+      "PackagePath": "staticwebassets\\images\\gia.jpg"
+    },
+    {
+      "Id": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\images\\gt_app.jpg",
+      "PackagePath": "staticwebassets\\images\\gt_app.jpg"
+    },
+    {
+      "Id": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\images\\gt_bv.jpg",
+      "PackagePath": "staticwebassets\\images\\gt_bv.jpg"
+    },
+    {
+      "Id": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\images\\gt_ht.jpg",
+      "PackagePath": "staticwebassets\\images\\gt_ht.jpg"
+    },
+    {
+      "Id": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\images\\gt_ld.png",
+      "PackagePath": "staticwebassets\\images\\gt_ld.png"
+    },
+    {
+      "Id": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\images\\icon_user.jpg",
+      "PackagePath": "staticwebassets\\images\\icon_user.jpg"
+    },
+    {
+      "Id": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\images\\list.jpg",
+      "PackagePath": "staticwebassets\\images\\list.jpg"
+    },
+    {
+      "Id": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\images\\tienich.jpg",
+      "PackagePath": "staticwebassets\\images\\tienich.jpg"
+    },
+    {
+      "Id": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\images\\tincay.jpg",
+      "PackagePath": "staticwebassets\\images\\tincay.jpg"
     },
     {
       "Id": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\images\\v13_251.png",
@@ -51,6 +111,26 @@
     {
       "Id": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\images\\v13_299.png",
       "PackagePath": "staticwebassets\\images\\v13_299.png"
+    },
+    {
+      "Id": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\js\\admin\\QL_User\\QL_User.js",
+      "PackagePath": "staticwebassets\\js\\admin\\QL_User\\QL_User.js"
+    },
+    {
+      "Id": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\js\\admin\\QL_User\\jquery-change.js",
+      "PackagePath": "staticwebassets\\js\\admin\\QL_User\\jquery-change.js"
+    },
+    {
+      "Id": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\js\\admin\\QL_User\\search_user.js",
+      "PackagePath": "staticwebassets\\js\\admin\\QL_User\\search_user.js"
+    },
+    {
+      "Id": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\js\\login.js",
+      "PackagePath": "staticwebassets\\js\\login.js"
+    },
+    {
+      "Id": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\js\\register.js",
+      "PackagePath": "staticwebassets\\js\\register.js"
     },
     {
       "Id": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\js\\site.js",
@@ -283,6 +363,14 @@
     {
       "Id": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\uploads\\0b003a21-f6ef-435a-8adc-49197e2220e2_c300 amg.png",
+      "PackagePath": "staticwebassets\\uploads\\0b003a21-f6ef-435a-8adc-49197e2220e2_c300 amg.png"
+    },
+    {
+      "Id": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\uploads\\32c71966-1361-4143-9cce-cd40e41efef2_c300 amg.png",
+      "PackagePath": "staticwebassets\\uploads\\32c71966-1361-4143-9cce-cd40e41efef2_c300 amg.png"
     },
     {
       "Id": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\uploads\\40ea9549-480d-40e1-88aa-fe0367d5890a_c300 amg.png",

@@ -14,6 +14,6 @@ namespace BTL_LTWNC.Data
 
         public DbSet<Post> tbl_Post { get; set; }
 
-        public DbSet<Post> tbl_User { get; set; }
+        public DbSet<User> tbl_User { get; set; }
     }
 }

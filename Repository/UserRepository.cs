@@ -1,8 +1,6 @@
-/*using System.Linq;
+using System.Linq;
 using BTL_LTWNC.Models;
-using Org.BouncyCastle.Crypto.Generators.BCrypt.Net;
 using BTL_LTWNC.Data;
-using Org.BouncyCastle.Crypto.Generators;
 
 namespace BTL_LTWNC.Repository
 {

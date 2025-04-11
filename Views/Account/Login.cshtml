@@ -1,0 +1,88 @@
+@model User
+@{
+    ViewData["Title"] = "Đăng nhập";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/account.css"> 
+</head>
+
+<body>
+    <!-- Ảnh nền -->
+    <img src="~/images/backgroud_LG.jpg" alt="bgr" class="bgr" />
+
+    <main class="main-content">
+        <div class="form-container">
+            <!-- Logo -->
+            <div class="logo-container">
+                <img src="~/images/Logo.png" alt="Logo" class="logo" />
+            </div>
+
+            <h2>ĐĂNG NHẬP</h2>
+
+            @if (ViewBag.Error != null)
+            {
+                <p style="color:red">@ViewBag.Error</p>
+            }
+
+            <form id="loginForm" class="registration-form">
+                <div class="form-group">
+                    <label for="sEmail">Email:</label>
+                    <input type="email" id="sEmail" required placeholder="Nhập email của bạn" />
+                </div>
+
+                <div class="form-group">
+                    <label for="sPW">Mật khẩu:</label>
+                    <input type="password" id="sPW" required placeholder="Nhập mật khẩu" />
+                </div>
+
+                <button type="submit" class="submit-button">Đăng nhập</button>
+            </form>
+
+            <div class="form-links">
+                <a asp-action="ForgotPassword">Quên mật khẩu?</a>
+                <a asp-action="Register">Đăng ký</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="~/js/login.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#loginForm").submit(function (e) {
+                e.preventDefault(); 
+
+                let email = $("#sEmail").val().trim();
+                let password = $("#sPW").val().trim();
+
+                if (!email || !password) {
+                    alert("Vui lòng điền đầy đủ thông tin.");
+                    return;
+                }
+
+                $.ajax({
+                    url: "/Account/Login",
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify({ sEmail: email, sPW: password }),
+                    success: function (response) {
+                        if (response.success) {
+                            window.location.href = response.redirectUrl;
+                        } else {
+                            alert(response.message);
+                        }
+                    },
+                    error: function (xhr) {
+                        alert("Lỗi hệ thống: " + xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
