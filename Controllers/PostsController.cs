@@ -51,6 +51,29 @@ namespace BTL_LTWNC.Controllers
         }
 
         [HttpGet]
+        public async Task<IActionResult> Payment(int id)
+        {
+            var post = await _context.tbl_Post.FirstOrDefaultAsync(p => p.Id == id);
+            if (post == null)
+            {
+                return NotFound();
+            }
+
+            var vehicle = await _context.tbl_Vehicle.FirstOrDefaultAsync(v => v.PK_iVehicleID == post.vehicleID);
+            if (vehicle == null)
+            {
+                return NotFound();
+            }
+
+            var viewModel = new PostvsVehicle
+            {
+                Post = post,
+                Vehicle = vehicle,
+            };
+            return View(viewModel);
+        }
+
+        [HttpGet]
         public async Task<IActionResult> PostDetail(int id)
         {
             var post = await _context.tbl_Post.FirstOrDefaultAsync(p => p.Id == id);

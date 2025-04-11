@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YrdT3ijnI6NyzxuNI5Q86n5NyUybkySe4faNf/yhnlQ=",
+  "Hash": "PHCutCNkybjFcCzPR89XSA28o3Y4urYOxMAFvdSkuog=",
   "Source": "BTL-LTWNC",
   "BasePath": "_content/BTL-LTWNC",
   "Mode": "Default",
@@ -186,6 +186,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\style3.css"
+    },
+    {
+      "Identity": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\css\\style4.css",
+      "SourceId": "BTL-LTWNC",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\",
+      "BasePath": "_content/BTL-LTWNC",
+      "RelativePath": "css/style4.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\style4.css"
     },
     {
       "Identity": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\css\\TC_admin.css",

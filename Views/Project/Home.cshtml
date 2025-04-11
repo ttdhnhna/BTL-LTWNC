@@ -2,6 +2,16 @@
     ViewData["Title"] = "Trang Chủ người dùng";
     Layout = null;
 }
+@{
+    var success = Context.Request.Query["success"];
+}
+
+@if (success == "true")
+{
+    <div class="alert alert-success">
+        Thanh toán thành công!
+    </div>
+}
 
 <!DOCTYPE html>
 <html lang="vi">

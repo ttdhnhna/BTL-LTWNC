@@ -1,0 +1,218 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model PostvsVehicle
+@{
+    ViewData["Title"] = "Thanh toán";
+}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/style4.css" asp-append-version="true">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="/Account/Home">
+            <img src="/images/Logo.png" alt="VeloGo Logo" class="logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#">Thông báo</a></li>
+                <li><a href="#">Lịch sử</a></li>
+                <li class="user-dropdown">
+                    @{
+                        var user = Context.Session.GetString("User");
+                        string userName = "";
+
+                        if (!string.IsNullOrEmpty(user))
+                        {
+                            userName = user.Split('@')[0];
+                        }
+                    }
+                    <div class="user-info">
+                        @if (string.IsNullOrEmpty(user))
+                        {
+                            <!-- Chưa đăng nhập -->
+                            <div class="auth-buttons">
+                                <a href="/Account/Login" class="btn-login">Đăng nhập</a>
+                                <a href="/Account/Register" class="btn-register">Đăng ký</a>
+                            </div>
+                        }
+                        else
+                        {
+                            <!-- Đã đăng nhập -->
+                            <img src="~/images/icon_user.jpg" alt="User Icon" class="user-icon">
+                            <div class="user-details">
+                                <p class="user-name">@userName</p>
+                                <div class="dropdown-btn">&#9660;</div>
+                            </div>
+                            <div class="dropdown-content">
+                                <a href="/Account/Login">Đăng xuất</a>
+                                <a href="/Account/Login">Tài khoản</a>
+                            </div>
+                        }
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="box">
+            <img src="~/uploads/@Model.Vehicle.imgURL" alt="@Model.Vehicle.sCarName" style="width: 100%; border-radius: 8px;">
+            <h3>@Model.Vehicle.sCarName"</h3>
+            <p>@Model.Vehicle.sLoaiNL, @Model.Vehicle.sSoCho chỗ, 1.25 lít, Sản xuất 2018, 6.3 l/100km</p>
+            <p><strong>Giao xe:</strong> Nhận tại đại lý</p>
+            <p><strong>Thời gian:</strong> @Model.Vehicle.dNgayThue - @Model.Vehicle.dNgayTra</p>
+            <div class="price-box" id="price-box"
+                 data-unit-price="@Model.Vehicle.fGiaThue"
+                 data-start-date="@Model.Vehicle.dNgayThue"
+                 data-end-date="@Model.Vehicle.dNgayTra">
+                <p>Đơn giá: @string.Format("{0:N0}đ", @Model.Vehicle.fGiaThue)</p>
+                <p id="rental-days"></p>
+                <p id="base-price"></p>
+                <p id="selected-services"><strong>Dịch vụ đã chọn:</strong> -</p>
+                <p id="service-price"></p>
+                <p id="discount-price"></p>
+                <p><strong id="total-price"></strong></p>
+            </div>
+        </div>
+
+        <div class="box">
+            <h3>Thông tin khách hàng</h3>
+            <form id="payment-form">
+                <div class="input-group">
+                    <label for="name">Họ và tên (*)</label>
+                    <input type="text" id="name" placeholder="Nhập tên họ">
+                </div>
+                <div class="input-group">
+                    <label for="phone">Số điện thoại (*)</label>
+                    <input type="text" id="phone" placeholder="Nhập số điện thoại">
+                </div>
+                <div class="input-group">
+                    <label for="email">Thư điện tử (*)</label>
+                    <input type="email" id="email">
+                </div>
+                <div class="input-group">
+                    <label for="note">Ghi chú của khách hàng</label>
+                    <textarea id="note" rows="2"></textarea>
+                </div>
+
+                <div class="radio-group">
+                    <label><strong>Hình thức thanh toán (*)</strong></label>
+                    <label><input type="radio" name="payment" checked> Trả trước (Giảm 5%)</label>
+                    <label><input type="radio" name="payment"> VISA/MasterCard</label>
+                    <label><input type="radio" name="payment"> VNPAY</label>
+                    <label><input type="radio" name="payment"> Chuyển khoản ngân hàng</label>
+                    <label><input type="radio" name="payment"> Thanh toán sau</label>
+                </div>
+
+                <div class="actions">
+                    <button class="btn btn-primary" type="submit">Hoàn tất thanh toán</button>
+                    <a asp-action="Posts" class="btn btn-danger">Quay lại</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact">
+                <p>Công ty VeloGo</p>
+                <p>Giấy ĐKKD số 0108383104</p>
+                <p>Cơ sở KH&ĐT Hà Nội</p>
+            </div>
+            <div class="policy">
+                <p>Chính sách bảo mật thông tin</p>
+                <p>Quy chế hoạt động</p>
+                <p>Quy trình giải quyết khiếu nại</p>
+                <p>Chính sách hủy bỏ</p>
+            </div>
+            <div class="support">
+                <p>Hướng dẫn thuê xe</p>
+                <p>Hợp đồng thuê xe tự động</p>
+                <p>Cẩm nang cho thuê xe tự lái</p>
+                <p>Câu hỏi thường gặp</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const priceBox = document.getElementById("price-box");
+            const checkboxes = document.querySelectorAll(".option-service");
+            const paymentRadios = document.querySelectorAll("input[name='payment']");
+
+            const unitPrice = parseFloat(priceBox.dataset.unitPrice);
+            const startDate = new Date(priceBox.dataset.startDate);
+            const endDate = new Date(priceBox.dataset.endDate);
+
+            const rentalDays = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24)) + 1;
+
+            function formatCurrency(number) {
+                return number.toLocaleString("vi-VN") + "đ";
+            }
+
+            function calculateTotal() {
+                // Giá cơ bản
+                const basePrice = rentalDays * unitPrice;
+
+                // Tổng dịch vụ đã chọn
+                let serviceTotal = 0;
+                checkboxes.forEach(cb => {
+                    if (cb.checked) {
+                        serviceTotal += parseFloat(cb.dataset.price);
+                    }
+                });
+
+                // Tổng trước giảm
+                let total = basePrice + serviceTotal;
+
+                // Giảm 5% nếu chọn "Trả trước"
+                let discount = 0;
+                if (paymentRadios[0].checked) {
+                    discount = total * 0.05;
+                    total = total - discount;
+                }
+
+                // Hiển thị ra giao diện
+                document.getElementById("rental-days").innerText = `Thời gian thuê: x ${rentalDays} ngày`;
+                document.getElementById("base-price").innerText = `Giá cơ bản: ${formatCurrency(basePrice)}`;
+                document.getElementById("service-price").innerText = `Giá dịch vụ tuỳ chọn: ${formatCurrency(serviceTotal)}`;
+                document.getElementById("discount-price").innerText = discount > 0 ? `Giảm giá (5%): -${formatCurrency(discount)}` : "";
+                document.getElementById("total-price").innerText = `Tổng: ${formatCurrency(total)}`;
+                // Hiển thị danh sách dịch vụ đã chọn
+                const selectedText = selectedServices.length > 0 ? selectedServices.join(", ") : "-";
+                document.getElementById("selected-services").innerHTML = `<strong>Dịch vụ đã chọn:</strong> ${selectedText}`;
+            }
+
+            // Tính ban đầu
+            calculateTotal();
+
+            // Bắt sự kiện checkbox và radio để tính lại
+            checkboxes.forEach(cb => cb.addEventListener("change", calculateTotal));
+            paymentRadios.forEach(rb => rb.addEventListener("change", calculateTotal));
+        });
+
+        document.getElementById("payment-form").addEventListener("submit", function (e) {
+            e.preventDefault(); // Ngăn submit form mặc định
+
+            const name = document.getElementById("name").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+            const email = document.getElementById("email").value.trim();
+
+            if (!name || !phone || !email) {
+                alert("Vui lòng điền đầy đủ họ tên, số điện thoại và email!");
+                return;
+            }
+
+            // Nếu hợp lệ, chuyển hướng về trang chủ với thông báo
+            window.location.href = "/Account/Home?success=true";
+        });
+    </script>
+
+</body>
+</html>

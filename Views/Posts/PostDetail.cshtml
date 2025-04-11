@@ -135,8 +135,8 @@
             </div>
             <div class="card-custom mb-3">
                 <h6>DỊCH VỤ TUỲ CHỌN</h6>
-                <div><input type="checkbox" checked> Bảo hiểm xe (+0đ)</div>
-                <div><input type="checkbox"> Thuê thêm tài xế (+1.000.000đ)</div>
+                    <div><input type="checkbox" class="option-service" data-price="0" checked> Bảo hiểm xe (+0đ)</div>
+                    <div><input type="checkbox" class="option-service" data-price="1000000"> Thuê thêm tài xế (+1.000.000đ)</div>
             </div>
             @* <div class="card-custom mb-3">
                 <h6>CHI TIẾT GIÁ</h6>
@@ -148,7 +148,7 @@
             </div> *@
             <div class="d-flex justify-content-between">
                 <a asp-action="Posts" class="btn btn-danger">Quay lại</a>
-                <button class="btn btn-success">Đặt xe</button>
+                    <a asp-action="Payment" asp-route-id="@Model.Post.Id" class="btn btn-success">Đặt xe</a>
             </div>
         </div>
     </div>

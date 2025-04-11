@@ -37,6 +37,10 @@
       "PackagePath": "staticwebassets\\css\\style3.css"
     },
     {
+      "Id": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\css\\style4.css",
+      "PackagePath": "staticwebassets\\css\\style4.css"
+    },
+    {
       "Id": "D:\\FITHOU\\Lập trình Web\\BTL-LTWNC\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
