@@ -34,7 +34,38 @@
                 <li><a href="#">Thông báo</a></li>
                 <li><a href="#">Lịch sử</a></li>
                 <li class="user-dropdown">
-                    <a href="#">User Name ▾</a>
+                    @{
+                        var user = Context.Session.GetString("User");
+                        string userName = "";
+
+                        if (!string.IsNullOrEmpty(user))
+                        {
+                            userName = user.Split('@')[0];
+                        }
+                    }
+                    <div class="user-info">
+                        @if (string.IsNullOrEmpty(user))
+                        {
+                            <!-- Chưa đăng nhập -->
+                            <div class="auth-buttons">
+                                <a href="/Account/Login" class="btn-login">Đăng nhập</a>
+                                <a href="/Account/Register" class="btn-register">Đăng ký</a>
+                            </div>
+                        }
+                        else
+                        {
+                            <!-- Đã đăng nhập -->
+                            <img src="~/images/icon_user.jpg" alt="User Icon" class="user-icon">
+                            <div class="user-details">
+                                <p class="user-name">@userName</p>
+                                <div class="dropdown-btn">&#9660;</div>
+                            </div>
+                            <div class="dropdown-content">
+                                <a href="/Account/Login">Đăng xuất</a>
+                                <a href="/Account/Login">Tài khoản</a>
+                            </div>
+                        }
+                    </div>
                 </li>
             </ul>
         </nav>
@@ -43,7 +74,7 @@
     <main>
         <h1>TẠO BÀI ĐĂNG</h1>
         <div class="container">
-            <form asp-action="AddPost" method="post" enctype="multipart/form-data">
+            <form id="addPostForm" asp-action="AddPost" method="post" enctype="multipart/form-data">
                 <div class="left-panel">
                     <label for="file-upload">Tải lên ảnh:</label>
                     <input type="file" id="file-upload" asp-for="ImageFile" name="ImageFile" accept="image/*">
@@ -70,6 +101,7 @@
                         <a asp-controller="Posts" asp-action="Posts" class="cancel">Quay lại</a>
                     </div>
                 </div>
+                @Html.AntiForgeryToken()
             </form>
         </div>
     </main>
@@ -95,6 +127,36 @@
             </div>
         </div>
     </footer>
+
+    @section Scripts {
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $('#addPostForm').submit(function (e) {
+                e.preventDefault(); // Ngăn form gửi bình thường
+
+                var formData = new FormData(this);
+
+                $.ajax({
+                    url: '@Url.Action("AddPost", "Posts")',
+                    type: 'POST',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function (res) {
+                        if (res.success) {
+                            // Redirect nếu thành công
+                            window.location.href = '/Posts/Posts';
+                        } else {
+                            $('#resultMessage').html('<div style="color:red;">' + res.message + '</div>');
+                        }
+                    },
+                    error: function () {
+                        $('#resultMessage').html('<div style="color:red;">Đã xảy ra lỗi khi gửi dữ liệu.</div>');
+                    }
+                });
+            });
+        </script>
+    }
 
 </body>
 </html>

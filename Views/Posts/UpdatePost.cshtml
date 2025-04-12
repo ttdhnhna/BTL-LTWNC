@@ -74,7 +74,7 @@
     <main>
         <h1>CHỈNH SỬA BÀI ĐĂNG</h1>
         <div class="container">
-            <form asp-action="UpdatePost" method="post" enctype="multipart/form-data">
+            <form id="updateForm" method="post" enctype="multipart/form-data">
                 <input type="hidden" asp-for="Id" />
                 <div class="left-panel">
                     <img src="~/uploads/@ViewData["imgURL"]" width="200" />
@@ -103,6 +103,7 @@
                         <a asp-controller="Posts" asp-action="Posts" class="cancel">Quay lại</a>
                     </div>
                 </div>
+                @Html.AntiForgeryToken()
             </form>
         </div>
     </main>
@@ -128,6 +129,39 @@
             </div>
         </div>
     </footer>
+    @section Scripts {
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#updatePostForm').submit(function (e) {
+                    e.preventDefault();
+
+                    var form = $('#updatePostForm')[0];
+                    var formData = new FormData(form);
+
+                    $.ajax({
+                        url: '@Url.Action("UpdatePost", "Posts")',
+                        type: 'POST',
+                        data: formData,
+                        contentType: false,
+                        processData: false,
+                        success: function (response) {
+                            // Nếu trả về là redirect
+                            if (response.redirectUrl) {
+                                window.location.href = response.redirectUrl;
+                            } else {
+                                $('#updateResult').html('<div style="color: green;">Cập nhật thành công!</div>');
+                            }
+                        },
+                        error: function (xhr) {
+                            $('#updateResult').html('<div style="color: red;">Lỗi khi cập nhật: ' + xhr.responseText + '</div>');
+                        }
+                    });
+                });
+            });
+        </script>
+
+    }
 
 </body>
 </html>
